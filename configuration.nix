@@ -2,10 +2,9 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, lib, ... }:
-let
-  unstable = import <nixpkgs-unstable> { config = { allowUnfree = true; }; };  
-in {
+{ config, pkgs, ... }:
+
+{
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -15,7 +14,7 @@ in {
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "hp"; # Define your hostname.
+  networking.hostName = "tartarus"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -44,23 +43,23 @@ in {
   };
 
   # Enable the X11 windowing system.
+  # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
+  services.displayManager.sddm.enable = true;
+  services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
-  services.xserver = {
+  services.xserver.xkb = {
     layout = "us";
-    xkbVariant = "";
+    variant = "";
   };
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -78,136 +77,40 @@ in {
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "steam"
-    "steam-original"
-    "steam-run"
-    "steamcmd"
-  ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.osbm = {
     isNormalUser = true;
     description = "osbm";
-    extraGroups = [ "networkmanager" "wheel" "docker"];
-    # shell = pkgs.fish; # dont change default shell i just need fish to be default in alacritty
+    extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      firefox
-      kate
+      kdePackages.kate
       vscode
-      # alacritty
-      mpv
-      qbittorrent
-      discord
-    #  obsidian
     #  thunderbird
     ];
   };
 
+  # Install firefox.
+  programs.firefox.enable = true;
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+
+  nix.settings.experimental-features = [ "nix-command" "flakes"];
+
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-
   environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
+    git
+    gnumake
     zip
     unzip
-    trash-cli
-    neofetch
-    git
-    git-lfs
-    tree
-    pciutils
-    tmux
-    pyenv
-    zoxide
-    tlrc
-    python3
-    fish
-    gnumake
-    gcc
-    noto-fonts-cjk-sans
-    libreoffice
-    # cudatoolkit
-    steam
-    steam-run
-    tmuxPlugins.sensible
-    tmuxPlugins.dracula
-    unstable.alacritty
-    unstable.obsidian
-    unstable.ani-cli
   ];
 
-
-  # This is using a rec (recursive) expression to set and access XDG_BIN_HOME within the expression
-  # For more on rec expressions see https://nix.dev/tutorials/first-steps/nix-language#recursive-attribute-set-rec
-  environment.sessionVariables = rec {
-    XDG_CACHE_HOME  = "$HOME/.cache";
-    XDG_CONFIG_HOME = "$HOME/.config";
-    XDG_DATA_HOME   = "$HOME/.local/share";
-    XDG_STATE_HOME  = "$HOME/.local/state";
-
-    # Not officially in the specification
-    XDG_BIN_HOME    = "$HOME/.local/bin";
-    PATH = [ 
-      "${XDG_BIN_HOME}"
-    ];
-  };
-
-  
-
-  virtualisation.docker.enable = true;
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-  };
-
-
-  # from https://github.com/grahamc/nixos-cuda-example/blob/master/configuration.nix
-  # services.xserver.videoDrivers = [ "nvidia" ];
-
-  # systemd.services.nvidia-control-devices = {
-  #   wantedBy = [ "multi-user.target" ];
-  #   serviceConfig.ExecStart = "${pkgs.linuxPackages.nvidia_x11.bin}/bin/nvidia-smi";
-  # };
-  # programs.bash.
-
-  programs.tmux = { # doesnt work
-    enable = true;
-    # shell = "${pkgs.fish}/bin/fish";
-    # terminal = "tmux-256color";
-    historyLimit = 100000;
-    plugins = with pkgs;
-      [
-        # {
-        #   plugin = tmuxPlugins.dracula;
-        #   extraConfig = "set -g @dracula-plugins 'cpu-usage ram-usage battery time'";
-        # }
-        tmuxPlugins.dracula
-        tmuxPlugins.sensible
-        
-    ];
-    extraConfig = ''
-      set -g prefix C-s
-      set -g base-index 1
-      setw -g pane-base-index 1
-      set-option -g default-shell ${pkgs.fish}/bin/fish
-      set -g mouse on
-
-      # plugins
-      set -g @dracula-plugins "cpu-usage ram-usage battery time"
-      set -g @dracula-show-timezone false
-
-      # Set new panes to open in current directory
-      bind c new-window -c "#{pane_current_path}"
-      bind '"' split-window -c "#{pane_current_path}"
-      bind % split-window -h -c "#{pane_current_path}"
-    '';
-  };
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -219,7 +122,7 @@ in {
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
+  # services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
@@ -233,6 +136,6 @@ in {
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "23.11"; # Did you read the comment?
+  system.stateVersion = "24.05"; # Did you read the comment?
 
 }
