@@ -86,6 +86,7 @@
     packages = with pkgs; [
       kdePackages.kate
       vscode
+      discord
     #  thunderbird
     ];
   };
@@ -109,6 +110,7 @@
     gnumake
     zip
     unzip
+    tlrc
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
