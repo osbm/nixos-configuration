@@ -87,6 +87,7 @@
       kdePackages.kate
       vscode
       discord
+      alacritty
     #  thunderbird
     ];
   };
@@ -109,6 +110,11 @@
     git
     gnumake
     zip
+    fish
+    trash-cli
+    tmux
+    zoxide
+    htop
     unzip
     tlrc
   ];
