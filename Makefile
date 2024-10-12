@@ -8,9 +8,6 @@ check-status:
 	echo "Git is clean. :)"
 
 build: check-status
-	@NIXOS_LABEL=$$(git rev-parse HEAD) && \
-	echo "Setting NixOS label to commit hash: $$NIXOS_LABEL" && \
-	sudo nixos-rebuild switch --flake .
-
+	@NIXOS_LABEL=$$(git rev-parse HEAD) sudo nixos-rebuild switch --flake .
 
 .PHONY: check-status build
