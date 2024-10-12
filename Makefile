@@ -5,7 +5,7 @@ check-status:
 		echo "Error: You have untracked or modified files. Please commit or stash your changes."; \
 		exit 1; \
 	fi
-	echo Git is clean. :)
+	echo "Git is clean. :)"
 
 build: check-status
 	NIXOS_LABEL := $(shell git rev-parse HEAD)
