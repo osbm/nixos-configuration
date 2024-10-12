@@ -77,18 +77,23 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
+  virtualisation.docker.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.osbm = {
     isNormalUser = true;
     description = "osbm";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker"];
     packages = with pkgs; [
       kdePackages.kate
       vscode
       discord
       alacritty
-    #  thunderbird
+      obsidian
+      mpv
+      libreoffice
+      blender
+      gimp
     ];
   };
 
@@ -98,9 +103,11 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-
+  # enable nix flakes
   nix.settings.experimental-features = [ "nix-command" "flakes"];
 
+  # disable the database error TODO add nix-index search
+  programs.command-not-found.enable = false;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -117,6 +124,13 @@
     htop
     unzip
     tlrc
+    wakeonlan
+    neovim
+    python312
+    python312Packages.torch
+    python312Packages.ipython
+    python312Packages.numpy
+    python312Packages.matplotlib
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
