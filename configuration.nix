@@ -121,6 +121,14 @@
   # disable the database error TODO add nix-index search
   programs.command-not-found.enable = false;
 
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+    localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+  };
+
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -138,11 +146,12 @@
     tlrc
     wakeonlan
     neovim
-    python312
-    python312Packages.torch
-    python312Packages.ipython
-    python312Packages.numpy
-    python312Packages.matplotlib
+    (pkgs.python312.withPackages (ppkgs: [
+      python312Packages.torch
+      python312Packages.ipython
+      python312Packages.numpy
+      python312Packages.matplotlib
+    ]))
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
