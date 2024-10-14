@@ -152,6 +152,7 @@
       python312Packages.numpy
       python312Packages.matplotlib
     ]))
+    # fcitx5-mosc
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -161,7 +162,15 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
-
+  i18n.inputMethod = {
+    enabled = "fcitx5";
+    # waylandFrontend = true;
+    fcitx5.addons = with pkgs; [
+      fcitx5-gtk             # alternatively, kdePackages.fcitx5-qt
+      # fcitx5-mosc  # table input method support
+      fcitx5-nord            # a color theme
+    ];
+   };
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
