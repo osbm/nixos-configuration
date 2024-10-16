@@ -20,4 +20,5 @@ But There are couple of things i need to do before:
 - [ ] add beautifier to the nix code.
 - [ ] make an ISO file with my configurations
 - [ ] make a github action that tests if my configuration is gonna build successfully or not
-- [ ] learn cache management
+- [x] learn cache management
+
