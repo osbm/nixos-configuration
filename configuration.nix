@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, pkgs-unstable, ... }:
 
 {
   imports =
@@ -153,6 +153,7 @@
       python312Packages.matplotlib
     ]))
     # fcitx5-mosc
+    pkgs-unstable.ani-cli
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

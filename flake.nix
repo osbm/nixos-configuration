@@ -3,16 +3,26 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+
   };
 
-  outputs = { self, nixpkgs, ... }:
-    let
-      lib = nixpkgs.lib;
-    in {
+  outputs = inputs@{
+    self,
+    nixpkgs,
+    nixpkgs-unstable,
+    ...
+  }: {
       nixosConfigurations = {
-        tartarus = lib.nixosSystem {
+        tartarus = nixpkgs.lib.nixosSystem rec {
           system = "x86_64-linux";
           modules = [ ./configuration.nix ];
+	  specialArgs = {
+	    pkgs-unstable = import nixpkgs-unstable {
+	      inherit system;
+	      config.allowUnfree = true;
+	    };
+	  };
           # revision = self.shortRev or self.dirtyShortRev or self.lastModified or "unknown";
         };
       };
