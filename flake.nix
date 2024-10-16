@@ -14,16 +14,16 @@
     ...
   }: {
       nixosConfigurations = {
+        revision = self.shortRev or self.dirtyShortRev or self.lastModified or "unknown";
         tartarus = nixpkgs.lib.nixosSystem rec {
           system = "x86_64-linux";
           modules = [ ./configuration.nix ];
-	  specialArgs = {
-	    pkgs-unstable = import nixpkgs-unstable {
-	      inherit system;
-	      config.allowUnfree = true;
-	    };
-	  };
-          # revision = self.shortRev or self.dirtyShortRev or self.lastModified or "unknown";
+          specialArgs = {
+          pkgs-unstable = import nixpkgs-unstable {
+              inherit system;
+              config.allowUnfree = true;
+            };
+          };
         };
       };
     };
