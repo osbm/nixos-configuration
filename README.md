@@ -14,7 +14,7 @@ But There are couple of things i need to do before:
 - [ ] configure hyprland
 - [ ] disk encryption
 - [ ] ssh gpg secret backup
-- [ ] add unstable channels to the flake.nix
+- [x] add unstable channels to the flake.nix
 - [ ] home manager setup without translating every line in my configs to nix options. (tldr just symlink files the nix way)
 - [ ] add japanese IME fcitx5 mosc
 - [ ] add beautifier to the nix code.
