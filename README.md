@@ -4,7 +4,7 @@ The nix configuration of mine. I am trying to find a very suitable workplace for
 
 But There are couple of things i need to do before:
 
-- [ ] add git hash to the nixos build generations
+- [x] add git hash to the nixos build generations
 - [ ] fix cuda drivers
     - [ ] fix nvidia-smi command
     - [ ] compile a cuda program successfully
