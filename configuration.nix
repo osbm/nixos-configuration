@@ -5,10 +5,9 @@
 { config, pkgs, pkgs-unstable, system-label, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [ # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -96,7 +95,7 @@
   users.users.osbm = {
     isNormalUser = true;
     description = "osbm";
-    extraGroups = [ "networkmanager" "wheel" "docker"];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [
       kdePackages.kate
       vscode
@@ -117,7 +116,7 @@
   nixpkgs.config.allowUnfree = true;
 
   # enable nix flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes"];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   nix.gc = {
     automatic = true;
@@ -130,11 +129,13 @@
 
   programs.steam = {
     enable = true;
-    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-    localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+    remotePlay.openFirewall =
+      true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall =
+      true; # Open ports in the firewall for Source Dedicated Server
+    localNetworkGameTransfers.openFirewall =
+      true; # Open ports in the firewall for Steam Local Network Game Transfers
   };
-
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -174,11 +175,11 @@
     enabled = "fcitx5";
     # waylandFrontend = true;
     fcitx5.addons = with pkgs; [
-      fcitx5-gtk             # alternatively, kdePackages.fcitx5-qt
-      fcitx5-mozc  # table input method support
-      fcitx5-nord            # a color theme
+      fcitx5-gtk # alternatively, kdePackages.fcitx5-qt
+      fcitx5-mozc # table input method support
+      fcitx5-nord # a color theme
     ];
-   };
+  };
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
