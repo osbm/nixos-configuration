@@ -8,6 +8,6 @@ check-status:
 	echo "Git is clean. :)"
 
 build: check-status
-	@NIXOS_LABEL=$$(git rev-parse HEAD) sudo nixos-rebuild switch --flake .
+	sudo nixos-rebuild switch --flake .
 
 .PHONY: check-status build
