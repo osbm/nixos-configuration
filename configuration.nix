@@ -166,6 +166,7 @@
     obs-studio
     audacity
     btop
+    pciutils
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
