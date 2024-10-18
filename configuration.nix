@@ -162,6 +162,9 @@
     ]))
     # fcitx5-mosc
     pkgs-unstable.ani-cli
+    obs-studio
+    audacity
+    btop
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
