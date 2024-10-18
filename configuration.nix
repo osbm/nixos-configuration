@@ -106,6 +106,7 @@
       libreoffice
       blender
       gimp
+      kitty
     ];
   };
 
