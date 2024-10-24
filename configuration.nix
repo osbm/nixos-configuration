@@ -167,6 +167,8 @@
     audacity
     btop
     pciutils
+    nodePackages.npm
+    nodejs
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
