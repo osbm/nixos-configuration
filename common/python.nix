@@ -11,7 +11,6 @@
       python312Packages.seaborn
       python312Packages.matplotlib
       python312Packages.jax
-      python312Packages.jupyter
     ]))
     (pkgs.python311.withPackages (ppkgs: [
       python311Packages.pip
