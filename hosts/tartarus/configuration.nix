@@ -9,6 +9,7 @@
     ./hardware-configuration.nix
     ../../common/fonts.nix
     ../../common/nix-settings.nix
+    ../../common/i18n.nix
   ];
 
   # Bootloader.
@@ -25,23 +26,6 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
-  # Set your time zone.
-  time.timeZone = "Europe/Istanbul";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "tr_TR.UTF-8";
-    LC_IDENTIFICATION = "tr_TR.UTF-8";
-    LC_MEASUREMENT = "tr_TR.UTF-8";
-    LC_MONETARY = "tr_TR.UTF-8";
-    LC_NAME = "tr_TR.UTF-8";
-    LC_NUMERIC = "tr_TR.UTF-8";
-    LC_PAPER = "tr_TR.UTF-8";
-    LC_TELEPHONE = "tr_TR.UTF-8";
-    LC_TIME = "ja_JP.UTF-8";
-  };
 
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
@@ -51,11 +35,6 @@
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
 
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -68,12 +47,6 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -133,6 +106,8 @@
       python312Packages.torch
       python312Packages.ipython
       python312Packages.numpy
+      python312Packages.pandas
+      python312Packages.seaborn
       python312Packages.matplotlib
     ]))
     # fcitx5-mosc
@@ -152,15 +127,7 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
-  i18n.inputMethod = {
-    enabled = "fcitx5";
-    # waylandFrontend = true;
-    fcitx5.addons = with pkgs; [
-      fcitx5-gtk # alternatively, kdePackages.fcitx5-qt
-      fcitx5-mozc # table input method support
-      fcitx5-nord # a color theme
-    ];
-  };
+
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
