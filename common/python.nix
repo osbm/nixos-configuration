@@ -10,6 +10,7 @@
       python312Packages.pandas
       python312Packages.seaborn
       python312Packages.matplotlib
+      python312Packages.jax
     ]))
     (pkgs.python311.withPackages (ppkgs: [
       python311Packages.pip
@@ -19,6 +20,7 @@
       python311Packages.pandas
       python311Packages.seaborn
       python311Packages.matplotlib
+      python311Packages.jax
     ]))
     pyenv
   ];
