@@ -10,6 +10,14 @@
       python312Packages.seaborn
       python312Packages.matplotlib
     ]))
+    (pkgs.python311.withPackages (ppkgs: [
+      python311Packages.torch
+      python311Packages.ipython
+      python311Packages.numpy
+      python311Packages.pandas
+      python311Packages.seaborn
+      python311Packages.matplotlib
+    ]))
     pyenv
   ];
 
