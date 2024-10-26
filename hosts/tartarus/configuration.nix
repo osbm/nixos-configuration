@@ -5,7 +5,7 @@
 { config, pkgs, pkgs-unstable, system-label, ... }:
 
 {
-  imports = [ # Include the results of the hardware scan.
+  imports = [
     ./hardware-configuration.nix
     ../../common/fonts.nix
   ];
