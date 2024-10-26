@@ -12,7 +12,6 @@
       python312Packages.matplotlib
       python312Packages.jax
       python312Packages.jupyter
-      python312Packages.jupyterlab
     ]))
     (pkgs.python311.withPackages (ppkgs: [
       python311Packages.pip
