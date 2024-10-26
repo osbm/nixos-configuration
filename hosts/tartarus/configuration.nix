@@ -10,6 +10,7 @@
     ../../common/fonts.nix
     ../../common/nix-settings.nix
     ../../common/i18n.nix
+    ../../common/python.nix
   ];
 
   # Bootloader.
@@ -69,6 +70,8 @@
       blender
       gimp
       kitty
+      obs-studio
+      audacity
     ];
   };
 
@@ -85,8 +88,6 @@
       true; # Open ports in the firewall for Steam Local Network Game Transfers
   };
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
     vim
     wget
@@ -102,18 +103,7 @@
     tlrc
     wakeonlan
     neovim
-    (pkgs.python312.withPackages (ppkgs: [
-      python312Packages.torch
-      python312Packages.ipython
-      python312Packages.numpy
-      python312Packages.pandas
-      python312Packages.seaborn
-      python312Packages.matplotlib
-    ]))
-    # fcitx5-mosc
     pkgs-unstable.ani-cli
-    obs-studio
-    audacity
     btop
     pciutils
     nodePackages.npm
