@@ -108,6 +108,7 @@
     pciutils
     nodePackages.npm
     nodejs
+    cloc
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
