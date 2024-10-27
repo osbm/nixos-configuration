@@ -109,6 +109,13 @@
     nodePackages.npm
     nodejs
     cloc
+    neofetch
+    cbonsai
+    cowsay
+    fortune
+    lolcat
+    cmatrix
+    inxi
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
