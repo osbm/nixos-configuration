@@ -12,8 +12,8 @@ But There are couple of things i need to do before:
 - [ ] learn how to deal with development environments
 - [ ] learn how to write derivations for cpp projects
 - [ ] configure hyprland
-- [ ] disk encryption
-- [ ] ssh gpg secret backup
+- [ ] disk encryption with disko
+- [ ] ssh gpg secret backup with sops
 - [x] add unstable channels to the flake.nix
 - [ ] home manager setup without translating every line in my configs to nix options. (tldr just symlink files the nix way)
 - [x] add japanese IME fcitx5 mosc
@@ -21,4 +21,5 @@ But There are couple of things i need to do before:
 - [ ] make an ISO file with my configurations
 - [ ] make a github action that tests if my configuration is gonna build successfully or not
 - [x] learn cache management
+- [ ] add stylix
 
