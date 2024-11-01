@@ -62,7 +62,7 @@
     packages = with pkgs; [
       kdePackages.kate
       vscode
-      discord
+      pkgs-unstable.discord # discord sucks
       alacritty
       obsidian
       mpv
