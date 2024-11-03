@@ -119,6 +119,7 @@
     inxi
     age
     sops
+    jq
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
