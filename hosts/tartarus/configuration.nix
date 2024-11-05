@@ -72,7 +72,7 @@
       kitty
       obs-studio
       audacity
-      qbittorrent
+      # qbittorrent
     ];
   };
 
