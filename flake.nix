@@ -10,9 +10,10 @@
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
 
+    stylix.url = "github:danth/stylix";
   };
 
-  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, vscode-server, sops-nix, ... }: {
+  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, vscode-server, sops-nix, stylix, ... }: {
     nixosConfigurations = {
       # revision = self.shortRev or self.dirtyShortRev or self.lastModified or "unknown";
       tartarus = nixpkgs.lib.nixosSystem rec {
@@ -24,6 +25,7 @@
             services.vscode-server.enable = true;
           })
           sops-nix.nixosModules.sops
+	  stylix.nixosModules.stylix
         ];
         specialArgs = {
           pkgs-unstable = import nixpkgs-unstable {
