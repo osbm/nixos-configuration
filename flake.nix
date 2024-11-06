@@ -11,6 +11,8 @@
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
 
     stylix.url = "github:danth/stylix";
+    stylix.inputs.nixpkgs.follows = "nixpkgs-unstable";
+
   };
 
   outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, vscode-server, sops-nix, stylix, ... }: {
