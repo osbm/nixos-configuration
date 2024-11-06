@@ -10,7 +10,7 @@
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
 
-    stylix.url = "github:danth/stylix";
+    stylix.url = "github:danth/stylix/release-24.05";
     stylix.inputs.nixpkgs.follows = "nixpkgs";
 
   };
