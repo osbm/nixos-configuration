@@ -11,7 +11,7 @@
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
 
     stylix.url = "github:danth/stylix";
-    stylix.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    stylix.inputs.nixpkgs.follows = "nixpkgs";
 
   };
 
