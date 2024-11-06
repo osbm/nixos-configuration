@@ -73,6 +73,7 @@
       obs-studio
       audacity
       # qbittorrent
+      arduino-ide
     ];
   };
 
