@@ -135,6 +135,7 @@
     jq
     onefetch
     just
+    adafruit-nrfutil
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
