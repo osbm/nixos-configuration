@@ -151,6 +151,10 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
+  services.udev.extraRules = ''
+    KERNEL=="ttyACM0", MODE="0666"
+  '';
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
