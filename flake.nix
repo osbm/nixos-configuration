@@ -14,6 +14,10 @@
     stylix.url = "github:danth/stylix/release-24.05";
     stylix.inputs.nixpkgs.follows = "nixpkgs";
 
+    dotfiles = {
+        url = "github:osbm/dotfiles";
+        flake = false;
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, vscode-server, sops-nix, stylix, ... }: {
@@ -28,7 +32,7 @@
             services.vscode-server.enable = true;
           })
           sops-nix.nixosModules.sops
-	  stylix.nixosModules.stylix
+          stylix.nixosModules.stylix
         ];
         specialArgs = {
           pkgs-unstable = import nixpkgs-unstable {

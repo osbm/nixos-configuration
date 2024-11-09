@@ -114,6 +114,22 @@
         "type": "github"
       }
     },
+    "dotfiles": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1730756003,
+        "narHash": "sha256-uKc2R08m057A6KHZeznJopYC6tVU5KC9j1z0L7epEb8=",
+        "owner": "osbm",
+        "repo": "dotfiles",
+        "rev": "5a8ee95b24565a3c3cc5267f2426a4da8c01cbdd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "osbm",
+        "repo": "dotfiles",
+        "type": "github"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -252,6 +268,7 @@
     },
     "root": {
       "inputs": {
+        "dotfiles": "dotfiles",
         "nixpkgs": "nixpkgs",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "sops-nix": "sops-nix",
