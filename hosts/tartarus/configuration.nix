@@ -84,7 +84,7 @@
       kitty
       obs-studio
       audacity
-      # qbittorrent
+      pkgs-unstable.qbittorrent
       arduino-ide
     ];
   };
