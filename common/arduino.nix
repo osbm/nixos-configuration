@@ -1,7 +1,7 @@
 { pkgs, lib, config, ... }: {
 
   environment.systemPackages = with pkgs; [
-    arduino-ide
+    # arduino-ide
     adafruit-nrfutil
   ];
 
