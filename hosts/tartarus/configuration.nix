@@ -11,6 +11,7 @@
     ../../common/nix-settings.nix
     ../../common/i18n.nix
     ../../common/python.nix
+    ../../common/arduino.nix
   ];
   
   stylix.enable = true;
@@ -85,7 +86,6 @@
       obs-studio
       audacity
       pkgs-unstable.qbittorrent
-      arduino-ide
     ];
   };
 
@@ -135,7 +135,6 @@
     jq
     onefetch
     just
-    adafruit-nrfutil
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -151,9 +150,6 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
-  services.udev.extraRules = ''
-    KERNEL=="ttyACM0", MODE="0666"
-  '';
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
