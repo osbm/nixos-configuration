@@ -77,7 +77,7 @@
       vscode
       pkgs-unstable.discord # discord sucks
       alacritty
-      obsidian
+      pkgs-unstable.obsidian
       mpv
       libreoffice
       blender
