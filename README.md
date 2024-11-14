@@ -21,5 +21,5 @@ But There are couple of things i need to do before:
 - [ ] make an ISO file with my configurations
 - [ ] make a github action that tests if my configuration is gonna build successfully or not
 - [x] learn cache management
-- [ ] add stylix
+- [x] add stylix
 
