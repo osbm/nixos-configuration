@@ -86,7 +86,7 @@
       obs-studio
       audacity
       pkgs-unstable.qbittorrent
-      pkgs-unstable.arduino-ide
+      arduino-ide
     ];
   };
 
