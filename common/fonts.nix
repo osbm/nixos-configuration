@@ -11,6 +11,11 @@
     dina-font
     nerdfonts
     proggyfonts
+    source-sans
+    source-sans-pro
+    source-serif-pro
+    font-awesome
+    font-awesome_5
   ];
 
 }
