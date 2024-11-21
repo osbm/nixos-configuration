@@ -28,9 +28,6 @@
         modules = [
           ./hosts/tartarus/configuration.nix
           vscode-server.nixosModules.default
-          ({ config, pkgs, ... }: {
-            services.vscode-server.enable = true;
-          })
           sops-nix.nixosModules.sops
           # stylix.nixosModules.stylix
         ];

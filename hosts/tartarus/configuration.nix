@@ -20,6 +20,8 @@
   # };
   # stylix.polarity = "dark";
 
+  services.vscode-server.enable = true;
+
 
   virtualisation.virtualbox.host.enable = true;
   users.extraGroups.vboxusers.members = [ "osbm" ];
