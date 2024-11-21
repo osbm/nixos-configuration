@@ -1,4 +1,4 @@
-{ pkgs, lib, config, ... }: {
+{ pkgs, lib, config, pkgs-unstable, ... }: {
 
   time.timeZone = "Europe/Istanbul";
 
@@ -24,12 +24,12 @@
   };
 
   i18n.inputMethod = {
-    enabled = "fcitx5";
-    # waylandFrontend = true;
+    type = "fcitx5";
+    enable = true;
     fcitx5.addons = with pkgs; [
-      fcitx5-gtk # alternatively, kdePackages.fcitx5-qt
-      fcitx5-mozc # table input method support
-      fcitx5-nord # a color theme
+      pkgs-unstable.fcitx5-mozc #TODO revert back to stable once its updated
+      fcitx5-gtk
+      fcitx5-nord            # a color theme
     ];
   };
 

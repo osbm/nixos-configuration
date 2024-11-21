@@ -1,7 +1,6 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, pkgs-unstable, system-label, ... }:
 
 {
@@ -14,12 +13,12 @@
     ../../common/arduino.nix
   ];
 
-  stylix.enable = true;
-  stylix.image = pkgs.fetchurl {
-    url = "https://www.pixelstalk.net/wp-content/uploads/2016/05/Epic-Anime-Awesome-Wallpapers.jpg";
-    sha256 = "enQo3wqhgf0FEPHj2coOCvo7DuZv+x5rL/WIo4qPI50=";
-  };
-  stylix.polarity = "dark";
+  # stylix.enable = true;
+  # stylix.image = pkgs.fetchurl {
+  #   url = "https://www.pixelstalk.net/wp-content/uploads/2016/05/Epic-Anime-Awesome-Wallpapers.jpg";
+  #   sha256 = "enQo3wqhgf0FEPHj2coOCvo7DuZv+x5rL/WIo4qPI50=";
+  # };
+  # stylix.polarity = "dark";
 
 
   virtualisation.virtualbox.host.enable = true;
