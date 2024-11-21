@@ -24,12 +24,12 @@
   };
 
   i18n.inputMethod = {
-    enabled = "fcitx5";
-    # waylandFrontend = true;
+    type = "fcitx5";
+    enable = true;
     fcitx5.addons = with pkgs; [
-      fcitx5-gtk # alternatively, kdePackages.fcitx5-qt
-      fcitx5-mozc # table input method support
-      fcitx5-nord # a color theme
+      fcitx5-mozc
+      fcitx5-gtk
+      fcitx5-nord            # a color theme
     ];
   };
 
