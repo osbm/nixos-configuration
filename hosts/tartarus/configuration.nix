@@ -93,7 +93,7 @@
   # Install firefox.
   programs.firefox = {
     enable = true;
-    languagePacks = [ "ja" "en-US" ];
+    languagePacks = [ "ja" "tr" "en-US" ];
 
     # profiles.osbm = {
 
@@ -112,6 +112,7 @@
       DisableFirefoxAccounts = true;
       DisableAccounts = true;
       DisableFirefoxScreenshots = true;
+      StartPage = "previous-session";
       # OverrideFirstRunPage = "";
       # OverridePostUpdatePage = "";
       # DontCheckDefaultBrowser = true;
