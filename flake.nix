@@ -32,7 +32,7 @@
             services.vscode-server.enable = true;
           })
           sops-nix.nixosModules.sops
-          stylix.nixosModules.stylix
+          # stylix.nixosModules.stylix
         ];
         specialArgs = {
           pkgs-unstable = import nixpkgs-unstable {
