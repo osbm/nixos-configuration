@@ -137,6 +137,7 @@
     vim
     wget
     git
+    git-lfs
     gnumake
     zip
     fish
