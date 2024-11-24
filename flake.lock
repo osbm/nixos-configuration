@@ -69,11 +69,11 @@
     "dotfiles": {
       "flake": false,
       "locked": {
-        "lastModified": 1731886092,
-        "narHash": "sha256-pq/rr6qV2npkPhQyrMYrs2ngrjxw3xYxklcvry+Dpds=",
+        "lastModified": 1732372015,
+        "narHash": "sha256-kuXZoiM5VFINdefIW6K01XDz8nkN5zJmzZu4P7hP4kQ=",
         "owner": "osbm",
         "repo": "dotfiles",
-        "rev": "78df6f0bb8b7230c76b6cb2bc48aa8e3a2a26dd5",
+        "rev": "20ea52277df359d048f729ff617fa3de4bea936a",
         "type": "github"
       },
       "original": {
