@@ -13,6 +13,8 @@
       python312Packages.jax
       python312Packages.huggingface-hub
       python312Packages.datasets
+      python312Packages.transformers
+      python312Packages.diffusers
       python312Packages.jupyter
     ]))
     pyenv
