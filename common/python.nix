@@ -11,6 +11,9 @@
       python312Packages.seaborn
       python312Packages.matplotlib
       python312Packages.jax
+      python312Packages.huggingface-hub
+      python312Packages.datasets
+      python312Packages.jupyter
     ]))
     pyenv
   ];
