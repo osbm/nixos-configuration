@@ -42,6 +42,12 @@
   networking.networkmanager.enable = true;
 
 
+  networking.extraHosts =
+  ''
+    0.0.0.0   youtube.com
+    ::0       youtube.com
+  '';
+
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
