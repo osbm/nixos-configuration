@@ -46,6 +46,9 @@
   ''
     0.0.0.0   youtube.com
     ::0       youtube.com
+
+    0.0.0.0   www.youtube.com
+    ::0       www.youtube.com
   '';
 
   # Enable the X11 windowing system.
