@@ -73,6 +73,17 @@
     pulse.enable = true;
   };
 
+  programs.direnv = {
+    package = pkgs.direnv;
+    silent = false;
+    loadInNixShell = true;
+    direnvrcExtra = "";
+    nix-direnv = {
+      enable = true;
+      package = pkgs.nix-direnv;
+    };
+
+
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
   virtualisation.docker.enable = true;
