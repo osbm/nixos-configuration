@@ -82,7 +82,7 @@
       enable = true;
       package = pkgs.nix-direnv;
     };
-
+  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
