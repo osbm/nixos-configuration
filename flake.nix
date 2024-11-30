@@ -48,6 +48,22 @@
             system-label = self.shortRev or self.dirtyShortRev or self.lastModified or "unknown";
           };
         };
+        ymir = nixpkgs.lib.nixosSystem rec {
+          system = "x86_64-linux";
+          modules = [
+            ./hosts/ymir/configuration.nix
+            vscode-server.nixosModules.default
+            sops-nix.nixosModules.sops
+            # stylix.nixosModules.stylix
+          ];
+          specialArgs = {
+            pkgs-unstable = import nixpkgs-unstable {
+              inherit system;
+              config.allowUnfree = true;
+            };
+            system-label = self.shortRev or self.dirtyShortRev or self.lastModified or "unknown";
+          };
+        };
       };
     };
 }
