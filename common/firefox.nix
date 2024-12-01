@@ -4,6 +4,16 @@
   config,
   ...
 }:
+let
+    lock-false = {
+      Value = false;
+      Status = "locked";
+    };
+    lock-true = {
+      Value = true;
+      Status = "locked";
+    };
+  in
 {
 
   # Install firefox.
@@ -16,6 +26,7 @@
     ];
 
     # profiles.osbm = {
+
 
     # Check about:policies#documentation for options.
     policies = {
@@ -51,8 +62,11 @@
         in
         listToAttrs [
           (extension "tree-style-tab" "treestyletab@piro.sakura.ne.jp")
-          # (extension "ublock-origin" "uBlock0@raymondhill.net")
+          (extension "ublock-origin" "uBlock0@raymondhill.net")
           (extension "bitwarden-password-manager" "{446900e4-71c2-419f-a6a7-df9c091e268b}")
+          (extension "motivation-new-tab" "")
+          (extension "return-youtube-dislikes" "{762f9885-5a13-4abd-9c77-433dcd38b8fd}")
+
           # (extension "tabliss" "extension@tabliss.io")
           # (extension "umatrix" "uMatrix@raymondhill.net")
           # (extension "libredirect" "7esoorv3@alefvanoon.anonaddy.me")
@@ -63,6 +77,30 @@
       # Then, download the XPI by filling it in to the install_url template, unzip it,
       # run `jq .browser_specific_settings.gecko.id manifest.json` or
       # `jq .applications.gecko.id manifest.json` to get the UUID
+    };
+
+    /* ---- PREFERENCES ---- */
+    # Check about:config for options.
+    Preferences = {
+      "browser.contentblocking.category" = { Value = "strict"; Status = "locked"; };
+      "extensions.pocket.enabled" = lock-false;
+      "extensions.screenshots.disabled" = lock-true;
+      "browser.topsites.contile.enabled" = lock-false;
+      "browser.formfill.enable" = lock-false;
+      "browser.search.suggest.enabled" = lock-false;
+      "browser.search.suggest.enabled.private" = lock-false;
+      "browser.urlbar.suggest.searches" = lock-false;
+      "browser.urlbar.showSearchSuggestionsFirst" = lock-false;
+      "browser.newtabpage.activity-stream.feeds.section.topstories" = lock-false;
+      "browser.newtabpage.activity-stream.feeds.snippets" = lock-false;
+      "browser.newtabpage.activity-stream.section.highlights.includePocket" = lock-false;
+      "browser.newtabpage.activity-stream.section.highlights.includeBookmarks" = lock-false;
+      "browser.newtabpage.activity-stream.section.highlights.includeDownloads" = lock-false;
+      "browser.newtabpage.activity-stream.section.highlights.includeVisited" = lock-false;
+      "browser.newtabpage.activity-stream.showSponsored" = lock-false;
+      "browser.newtabpage.activity-stream.system.showSponsored" = lock-false;
+      "browser.newtabpage.activity-stream.showSponsoredTopSites" = lock-false;
+      "toolkit.legacyUserProfileCustomizations.stylesheets" = lock-true;
     };
   };
 
