@@ -81,7 +81,7 @@ let
 
     /* ---- PREFERENCES ---- */
     # Check about:config for options.
-    Preferences = {
+    preferences = {
       "browser.contentblocking.category" = { Value = "strict"; Status = "locked"; };
       "extensions.pocket.enabled" = lock-false;
       "extensions.screenshots.disabled" = lock-true;
