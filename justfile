@@ -3,17 +3,17 @@ _default:
 
 
 check-git:
-  # output of the git status --porcelain must be empty
+  # git must be clean
   test -z "$(git status --porcelain)"
 
 
 [linux]
-build *args:
+build *args: check-git
   sudo nixos-rebuild build --flake . {{args}} |& nom
   nvd diff /run/current-system ./result
 
 [linux]
-switch *args:
+switch *args: check-git
   sudo nixos-rebuild switch --flake . {{args}} |& nom
 
 update:
