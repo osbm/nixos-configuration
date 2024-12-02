@@ -14,6 +14,7 @@
     ../../common/arduino.nix
     ../../common/firefox.nix
     ../../common/common-packages.nix
+    ../../common/concentration.nix
   ];
 
   # stylix.enable = true;
@@ -44,15 +45,6 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
-
-  networking.extraHosts =
-  ''
-    0.0.0.0   youtube.com
-    ::0       youtube.com
-
-    0.0.0.0   www.youtube.com
-    ::0       www.youtube.com
-  '';
 
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
