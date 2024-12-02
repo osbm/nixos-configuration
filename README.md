@@ -12,7 +12,8 @@ But There are couple of things i need to do before:
 - [ ] learn how to deal with development environments
 - [ ] learn how to write derivations for cpp projects
 - [ ] configure hyprland
-- [ ] disk encryption with disko
+- [x] disk encryption with disko (cancelled)
+    - enabled disk encryption during system installation.
 - [ ] ssh gpg secret backup with sops
 - [x] add unstable channels to the flake.nix
 - [ ] home manager setup without translating every line in my configs to nix options. (tldr just symlink files the nix way)
