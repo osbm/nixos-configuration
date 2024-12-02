@@ -39,6 +39,7 @@
     starship
     tree
     ffmpeg
+    nix-output-monitor
   ];
 
   programs.steam = {
