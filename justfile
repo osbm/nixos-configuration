@@ -2,6 +2,11 @@ _default:
   @just --list --unsorted
 
 
+check-git:
+  # output of the git status --porcelain must be empty
+  test -z "$(git status --porcelain)"
+
+
 [linux]
 build *args:
   sudo nixos-rebuild build --flake . {{args}} |& nom
