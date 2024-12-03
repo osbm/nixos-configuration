@@ -14,6 +14,9 @@
     # stylix.url = "github:danth/stylix/master";
     # stylix.inputs.nixpkgs.follows = "nixpkgs";
 
+    home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
     dotfiles = {
       url = "github:osbm/dotfiles";
       flake = false;
