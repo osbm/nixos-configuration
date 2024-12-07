@@ -1,10 +1,13 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, pkgs-unstable, system-label, ... }:
-
 {
+  config,
+  pkgs,
+  pkgs-unstable,
+  system-label,
+  ...
+}: {
   imports = [
     ./hardware-configuration.nix
     ../../common/fonts.nix
@@ -26,10 +29,8 @@
 
   services.vscode-server.enable = true;
 
-
   virtualisation.virtualbox.host.enable = true;
-  users.extraGroups.vboxusers.members = [ "osbm" ];
-
+  users.extraGroups.vboxusers.members = ["osbm"];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -45,7 +46,6 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
-
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
@@ -53,7 +53,6 @@
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
-
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -68,8 +67,6 @@
     pulse.enable = true;
   };
 
-
-
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
   virtualisation.docker.enable = true;
@@ -78,7 +75,7 @@
   users.users.osbm = {
     isNormalUser = true;
     description = "osbm";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = ["networkmanager" "wheel" "docker"];
     packages = with pkgs; [
       kdePackages.kate
       vscode
@@ -97,8 +94,6 @@
     ];
   };
 
-
-
   environment.systemPackages = with pkgs; [
   ];
 
@@ -106,12 +101,10 @@
   # started in user sessions.
   # programs.mtr.enable = true;
 
-
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
-
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
@@ -127,5 +120,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
-
 }

@@ -1,7 +1,10 @@
-{ pkgs, lib, config, ... }: {
-
-  networking.extraHosts =
-  ''
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}: {
+  networking.extraHosts = ''
     0.0.0.0   youtube.com
     ::0       youtube.com
 

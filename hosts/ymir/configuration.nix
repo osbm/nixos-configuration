@@ -1,10 +1,13 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, pkgs-unstable, system-label, ... }:
-
 {
+  config,
+  pkgs,
+  pkgs-unstable,
+  system-label,
+  ...
+}: {
   imports = [
     ./hardware-configuration.nix
     ../../common/fonts.nix
@@ -32,7 +35,6 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
-
   # hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
   # Enable OpenGL
   hardware.graphics = {
@@ -43,7 +45,6 @@
   services.xserver.videoDrivers = ["nvidia"];
 
   hardware.nvidia = {
-
     # Modesetting is required.
     modesetting.enable = true;
 
@@ -73,7 +74,6 @@
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
-
 
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
@@ -123,7 +123,6 @@
     };
   };
 
-
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
@@ -133,7 +132,7 @@
   users.users.osbm = {
     isNormalUser = true;
     description = "osbm";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = ["networkmanager" "wheel" "docker"];
     packages = with pkgs; [
       kdePackages.kate
       vscode
@@ -152,15 +151,12 @@
     ];
   };
 
-
-
   nixpkgs.config.allowUnfree = true;
-
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     ollama
   ];
 
@@ -190,5 +186,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.11"; # Did you read the comment?
-
 }

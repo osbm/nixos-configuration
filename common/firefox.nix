@@ -3,19 +3,16 @@
   lib,
   config,
   ...
-}:
-let
-    lock-false = {
-      Value = false;
-      Status = "locked";
-    };
-    lock-true = {
-      Value = true;
-      Status = "locked";
-    };
-  in
-{
-
+}: let
+  lock-false = {
+    Value = false;
+    Status = "locked";
+  };
+  lock-true = {
+    Value = true;
+    Status = "locked";
+  };
+in {
   # Install firefox.
   programs.firefox = {
     enable = true;
@@ -26,7 +23,6 @@ let
     ];
 
     # profiles.osbm = {
-
 
     # Check about:policies#documentation for options.
     policies = {
@@ -49,17 +45,15 @@ let
       DisplayBookmarksToolbar = "always"; # alternatives: "never" or "newtab"
       # DisplayMenuBar = "default-off"; # alternatives: "always", "never" or "default-on"
       # SearchBar = "unified"; # alternat
-      ExtensionSettings =
-        with builtins;
-        let
-          extension = shortId: uuid: {
-            name = uuid;
-            value = {
-              install_url = "https://addons.mozilla.org/en-US/firefox/downloads/latest/${shortId}/latest.xpi";
-              installation_mode = "normal_installed";
-            };
+      ExtensionSettings = with builtins; let
+        extension = shortId: uuid: {
+          name = uuid;
+          value = {
+            install_url = "https://addons.mozilla.org/en-US/firefox/downloads/latest/${shortId}/latest.xpi";
+            installation_mode = "normal_installed";
           };
-        in
+        };
+      in
         listToAttrs [
           (extension "tree-style-tab" "treestyletab@piro.sakura.ne.jp")
           (extension "ublock-origin" "uBlock0@raymondhill.net")
@@ -79,7 +73,9 @@ let
       # `jq .applications.gecko.id manifest.json` to get the UUID
     };
 
-    /* ---- PREFERENCES ---- */
+    /*
+    ---- PREFERENCES ----
+    */
     # Check about:config for options.
     preferences = {
       "browser.contentblocking.category" = true;
@@ -103,5 +99,4 @@ let
       "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
     };
   };
-
 }

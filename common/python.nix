@@ -1,6 +1,9 @@
-{ pkgs, lib, config, ... }: {
-
-
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}: {
   environment.systemPackages = with pkgs; [
     (pkgs.python312.withPackages (ppkgs: [
       python312Packages.pip

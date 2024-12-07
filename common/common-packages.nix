@@ -1,6 +1,10 @@
-{ pkgs, pkgs-unstable, lib, config, ... }: {
-
-
+{
+  pkgs,
+  pkgs-unstable,
+  lib,
+  config,
+  ...
+}: {
   environment.systemPackages = with pkgs; [
     vim
     wget
@@ -68,5 +72,4 @@
       package = pkgs.nix-direnv;
     };
   };
-
 }
