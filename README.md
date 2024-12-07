@@ -23,9 +23,9 @@ Here i have 2 machines.
 - [x] add unstable channels to the flake.nix
 - [ ] home manager setup without translating every line in my configs to nix options. (tldr just symlink files the nix way)
 - [x] add japanese IME fcitx5 mosc
-- [ ] add beautifier to the nix code.
+- [x] add beautifier to the nix code.
 - [ ] make an ISO file with my configurations
-- [ ] make a github action that tests if my configuration is gonna build successfully or not
+- [x] make a github action that tests if my configuration is gonna build successfully or not
 - [x] learn cache management
 - [x] add stylix
 
