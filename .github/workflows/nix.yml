@@ -1,8 +1,6 @@
 name: Nix
 on:
   push:
-    branches:
-      - master
   pull_request:
 jobs:
   build:
