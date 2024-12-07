@@ -14,7 +14,7 @@ build *args: check-git
 
 [linux]
 switch *args: check-git
-  sudo nixos-rebuild switch --flake . {{args}} |& nom
+  sudo nixos-rebuild switch --accept-flake-config --flake . {{args}} |& nom
 
 update:
   nix flake update
