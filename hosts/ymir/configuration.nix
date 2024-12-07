@@ -148,6 +148,7 @@
       audacity
       pkgs-unstable.qbittorrent
       arduino-ide
+      prismlauncher
     ];
   };
 
