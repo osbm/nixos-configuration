@@ -20,7 +20,7 @@ jobs:
       #   with:
       #     name: YOURCACHE
       #     authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
-      - run: nix flake check
+      - run: nix flake check --accept-flake-config
         # Pre-build the system configuration
       - run: nix build .#nixosConfigurations.${{ matrix.target-system }}.config.system.build.toplevel
 
