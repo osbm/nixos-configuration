@@ -23,7 +23,7 @@ jobs:
       - run: nix flake check --accept-flake-config
         # Pre-build the system configuration
       - run: nix build --accept-flake-config --dry-run .#nixosConfigurations.${{ matrix.target-system }}.config.system.build.toplevel
-  build:
+  check-formatting:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
