@@ -17,7 +17,7 @@
     ../../common/arduino.nix
     ../../common/firefox.nix
     ../../common/common-packages.nix
-    # ../../common/concentration.nix
+    ../../common/concentration.nix
   ];
 
   # Bootloader.
