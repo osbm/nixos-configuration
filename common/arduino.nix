@@ -10,6 +10,6 @@
   ];
 
   services.udev.extraRules = ''
-    KERNEL=="ttyACM0", MODE="0666"
+    KERNEL=="ttyUSB0", MODE="0666"
   '';
 }
