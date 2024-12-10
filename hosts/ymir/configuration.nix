@@ -35,7 +35,7 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
-  hardware.nvidia-container-toolkit.enable;
+  hardware.nvidia-container-toolkit.enable = true;
 
   # hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
   # Enable OpenGL
