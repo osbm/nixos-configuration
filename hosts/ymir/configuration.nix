@@ -35,6 +35,8 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  hardware.nvidia-container-toolkit.enable;
+
   # hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
   # Enable OpenGL
   hardware.graphics = {
@@ -127,10 +129,7 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  virtualisation.docker = {
-    enable = true;
-    enableNvidia = true;
-  };
+  virtualisation.docker.enable = true;
 
   users.users.osbm = {
     isNormalUser = true;
