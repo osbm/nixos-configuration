@@ -6,7 +6,7 @@
   ...
 }: {
   environment.systemPackages = with pkgs; [
-    vim
+    # vim
     wget
     git
     git-lfs
@@ -20,7 +20,7 @@
     unzip
     tlrc
     wakeonlan
-    neovim
+    # neovim
     pkgs-unstable.ani-cli
     btop
     pciutils
