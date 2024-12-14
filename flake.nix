@@ -38,14 +38,13 @@
     ...
   }: {
     nixosConfigurations = let
-       system = "x86_64-linux";
+      system = "x86_64-linux";
       pkgs-unstable = import nixpkgs-unstable {
-            inherit system;
-            config.allowUnfree = true;
-          };
+        inherit system;
+        config.allowUnfree = true;
+      };
       system-label = self.shortRev or self.dirtyShortRev or self.lastModified or "unknown";
-    in
-    {
+    in {
       tartarus = nixpkgs.lib.nixosSystem rec {
         inherit system;
         modules = [
