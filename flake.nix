@@ -25,10 +25,7 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    dotfiles = {
-      url = "github:osbm/dotfiles";
-      flake = false;
-    };
+    osbm-nvim.url = "github:osbm/osbm-nvim";
   };
 
   outputs = {
@@ -37,40 +34,38 @@
     nixpkgs-unstable,
     vscode-server,
     sops-nix,
+    osbm-nvim,
     ...
   }: {
-    nixosConfigurations = {
-      # revision = self.shortRev or self.dirtyShortRev or self.lastModified or "unknown";
+    nixosConfigurations = let
+       system = "x86_64-linux";
+      pkgs-unstable = import nixpkgs-unstable {
+            inherit system;
+            config.allowUnfree = true;
+          };
+      system-label = self.shortRev or self.dirtyShortRev or self.lastModified or "unknown";
+    in
+    {
       tartarus = nixpkgs.lib.nixosSystem rec {
-        system = "x86_64-linux";
+        inherit system;
         modules = [
           ./hosts/tartarus/configuration.nix
           vscode-server.nixosModules.default
           sops-nix.nixosModules.sops
-          # stylix.nixosModules.stylix
         ];
         specialArgs = {
-          pkgs-unstable = import nixpkgs-unstable {
-            inherit system;
-            config.allowUnfree = true;
-          };
-          system-label = self.shortRev or self.dirtyShortRev or self.lastModified or "unknown";
+          inherit pkgs-unstable system-label;
         };
       };
       ymir = nixpkgs.lib.nixosSystem rec {
-        system = "x86_64-linux";
+        inherit system;
         modules = [
           ./hosts/ymir/configuration.nix
           vscode-server.nixosModules.default
           sops-nix.nixosModules.sops
-          # stylix.nixosModules.stylix
         ];
         specialArgs = {
-          pkgs-unstable = import nixpkgs-unstable {
-            inherit system;
-            config.allowUnfree = true;
-          };
-          system-label = self.shortRev or self.dirtyShortRev or self.lastModified or "unknown";
+          inherit pkgs-unstable system-label;
         };
       };
     };
