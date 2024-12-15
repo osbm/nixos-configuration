@@ -44,6 +44,7 @@
     tree
     ffmpeg
     nix-output-monitor
+    yazi
   ];
 
   programs.steam = {
