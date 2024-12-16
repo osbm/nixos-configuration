@@ -53,7 +53,7 @@
           sops-nix.nixosModules.sops
         ];
         specialArgs = {
-          inherit pkgs-unstable system-label;
+          inherit pkgs-unstable system-label osbm-nvim;
         };
       };
       ymir = nixpkgs.lib.nixosSystem rec {
@@ -64,7 +64,7 @@
           sops-nix.nixosModules.sops
         ];
         specialArgs = {
-          inherit pkgs-unstable system-label;
+          inherit pkgs-unstable system-label osbm-nvim;
         };
       };
     };
