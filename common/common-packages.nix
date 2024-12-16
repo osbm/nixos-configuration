@@ -45,6 +45,7 @@
     ffmpeg
     nix-output-monitor
     yazi
+    ripgrep
   ];
 
   programs.steam = {
