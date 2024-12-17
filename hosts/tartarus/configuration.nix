@@ -6,6 +6,7 @@
   pkgs,
   pkgs-unstable,
   system-label,
+  osbm-nvim,
   ...
 }: {
   imports = [
@@ -98,6 +99,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    osbm-nvim.packages.${system}.default
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
