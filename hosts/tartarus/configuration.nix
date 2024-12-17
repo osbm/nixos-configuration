@@ -30,6 +30,11 @@
 
   services.vscode-server.enable = true;
 
+
+  home-manager.useGlobalPkgs = true;
+  home-manager.useUserPackages = true;
+  home-manager.users.osbm = import ./home.nix;
+
   virtualisation.virtualbox.host.enable = true;
   users.extraGroups.vboxusers.members = ["osbm"];
 

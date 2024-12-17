@@ -35,6 +35,7 @@
     vscode-server,
     sops-nix,
     osbm-nvim,
+    home-manager,
     ...
   }: {
     nixosConfigurations = let
@@ -51,6 +52,7 @@
           ./hosts/tartarus/configuration.nix
           vscode-server.nixosModules.default
           sops-nix.nixosModules.sops
+          home-manager.nixosModules.home-manager
         ];
         specialArgs = {
           inherit pkgs-unstable system-label osbm-nvim;
