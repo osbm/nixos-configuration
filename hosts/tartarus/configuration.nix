@@ -28,6 +28,8 @@
   # };
   # stylix.polarity = "dark";
 
+  services.cloudflare-warp.enable = true;
+
   services.vscode-server.enable = true;
 
   home-manager.useGlobalPkgs = true;
