@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "osbm";
@@ -11,6 +13,12 @@
     pkgs.htop
     pkgs.fortune
   ];
+
+  programs.git = {
+    enable = true;
+    userEmail = "osmanfbayram@gmail.com";
+    userName = "osbm";
+  };
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
