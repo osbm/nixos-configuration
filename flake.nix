@@ -22,7 +22,7 @@
     # stylix.url = "github:danth/stylix/master";
     # stylix.inputs.nixpkgs.follows = "nixpkgs";
 
-    home-manager.url = "github:nix-community/home-manager";
+    home-manager.url = "github:nix-community/home-manager/release-24.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     osbm-nvim.url = "github:osbm/osbm-nvim";
