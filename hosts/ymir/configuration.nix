@@ -14,7 +14,7 @@
     ../../common/fonts.nix
     ../../common/nix-settings.nix
     ../../common/i18n.nix
-    # ../../common/python.nix
+    ../../common/python.nix
     ../../common/arduino.nix
     ../../common/firefox.nix
     ../../common/common-packages.nix
