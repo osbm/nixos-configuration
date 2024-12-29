@@ -19,6 +19,7 @@
     ../../common/firefox.nix
     ../../common/common-packages.nix
     # ../../common/concentration.nix
+    ../../common/secrets.nix
   ];
 
   # Bootloader.
