@@ -158,7 +158,7 @@
     };
     bayram = {
       isNormalUser = true;
-      description = "So my family have easy access";
+      description = "bayram";
       hashedPasswordFile = config.age.secrets.bayram.path;
       extraGroups = ["networkmanager"];
       packages = with pkgs; [
