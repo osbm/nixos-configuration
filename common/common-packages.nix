@@ -3,6 +3,7 @@
   pkgs-unstable,
   lib,
   config,
+  agenix,
   ...
 }: {
   environment.systemPackages = with pkgs; [
@@ -46,6 +47,7 @@
     nix-output-monitor
     yazi
     ripgrep
+    agenix.packages.x86_64-linux.default
   ];
 
   programs.steam = {
