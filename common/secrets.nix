@@ -1,6 +1,9 @@
 {
   age.secrets = {
     another-secret.file = ../secrets/another-secret.age;
-    bayram.file = ../secrets/bayram.age;
+    bayram = {
+      file = ../secrets/bayram.age;
+      owner = "bayram";
+    };
   };
 }
