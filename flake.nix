@@ -16,8 +16,11 @@
     vscode-server.url = "github:nix-community/nixos-vscode-server";
     vscode-server.inputs.nixpkgs.follows = "nixpkgs";
 
-    sops-nix.url = "github:Mic92/sops-nix";
-    sops-nix.inputs.nixpkgs.follows = "nixpkgs";
+    # sops-nix.url = "github:Mic92/sops-nix";
+    # sops-nix.inputs.nixpkgs.follows = "nixpkgs";
+
+    agenix.url = "github:ryantm/agenix";
+
 
     # stylix.url = "github:danth/stylix/master";
     # stylix.inputs.nixpkgs.follows = "nixpkgs";
@@ -33,7 +36,7 @@
     nixpkgs,
     nixpkgs-unstable,
     vscode-server,
-    sops-nix,
+    agenix,
     osbm-nvim,
     home-manager,
     ...
@@ -51,7 +54,7 @@
         modules = [
           ./hosts/tartarus/configuration.nix
           vscode-server.nixosModules.default
-          sops-nix.nixosModules.sops
+          agenix.nixosModules.sops
           home-manager.nixosModules.home-manager
         ];
         specialArgs = {
@@ -63,7 +66,8 @@
         modules = [
           ./hosts/ymir/configuration.nix
           vscode-server.nixosModules.default
-          sops-nix.nixosModules.sops
+          agenix.nixosModules.sops
+          home-manager.nixosModules.home-manager
         ];
         specialArgs = {
           inherit pkgs-unstable system-label osbm-nvim;
