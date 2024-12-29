@@ -159,7 +159,7 @@
     bayram = {
       isNormalUser = true;
       description = "So my family have easy access";
-      passwordFile = config.age.secrets.bayram.path;
+      hashedPasswordFile = config.age.secrets.bayram.path;
       extraGroups = ["networkmanager"];
       packages = with pkgs; [
         vlc
