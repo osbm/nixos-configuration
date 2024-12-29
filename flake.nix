@@ -54,7 +54,7 @@
         modules = [
           ./hosts/tartarus/configuration.nix
           vscode-server.nixosModules.default
-          agenix.nixosModules.sops
+          agenix.nixosModules.default
           home-manager.nixosModules.home-manager
         ];
         specialArgs = {
@@ -66,7 +66,7 @@
         modules = [
           ./hosts/ymir/configuration.nix
           vscode-server.nixosModules.default
-          agenix.nixosModules.sops
+          agenix.nixosModules.default
           home-manager.nixosModules.home-manager
         ];
         specialArgs = {
