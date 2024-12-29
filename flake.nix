@@ -21,7 +21,6 @@
 
     agenix.url = "github:ryantm/agenix";
 
-
     # stylix.url = "github:danth/stylix/master";
     # stylix.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -69,7 +68,7 @@
           agenix.nixosModules.default
           home-manager.nixosModules.home-manager
           {
-            environment.systemPackages = [ agenix.packages.${system}.default ];
+            environment.systemPackages = [agenix.packages.${system}.default];
           }
         ];
         specialArgs = {
