@@ -156,18 +156,18 @@
         prismlauncher
       ];
     };
-    bayram = {
-      isNormalUser = true;
-      description = "bayram";
-      initialPassword = "changeme";
-      extraGroups = ["networkmanager"];
-      packages = with pkgs; [
-        vlc
-        ungoogled-chromium
-        prismlauncher
-        qbittorrent
-      ];
-    };
+    # bayram = {
+    #   isNormalUser = true;
+    #   description = "bayram";
+    #   initialPassword = "changeme";
+    #   extraGroups = ["networkmanager"];
+    #   packages = with pkgs; [
+    #     vlc
+    #     ungoogled-chromium
+    #     prismlauncher
+    #     qbittorrent
+    #   ];
+    # };
   };
 
   nixpkgs.config.allowUnfree = true;
