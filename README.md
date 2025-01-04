@@ -1,31 +1,18 @@
 # nixos is life
 The nix configuration of mine.
 
-Here i have 2 machines.
+Here i have 4 machines.
 - Laptop **tartarus** (faulty hardware, nvidia gpu doesnt work)
 - Desktop **ymir** (beast, my most prized possesion as of now)
+- Raspberry Pi Zero 2W **harmonica** (small machine for small tasks and cronjobs) (not setup yet)
+- Raspberry Pi 5 **pochita** (a server that i experiment with) (not setup yet)
 
 
+# To-do list
 
-## To-do list
-
-- [x] add git hash to the nixos build generations
-- [x] fix cuda drivers
-    - [x] fix nvidia-smi command
-    - [ ] compile a cuda program successfully
-    - [ ] build a python package with embedded cuda and run successfully
-- [x] learn how to deal with development environments
-- [ ] learn how to write derivations for cpp projects
-- [ ] configure hyprland
-- [x] disk encryption with disko (cancelled)
-    - enabled disk encryption during system installation.
-- [ ] ssh gpg secret backup with sops
-- [x] add unstable channels to the flake.nix
-- [ ] home manager setup without translating every line in my configs to nix options. (tldr just symlink files the nix way)
-- [x] add japanese IME fcitx5 mosc
-- [x] add beautifier to the nix code.
-- [ ] make an ISO file with my configurations
-- [x] make a github action that tests if my configuration is gonna build successfully or not
-- [x] learn cache management
-- [x] add stylix
+- [ ] iso image generator
+- agenix
+    - [ ] add my gpg keys
+    - [ ] add ssh keys so that machines can connect to each other
+- [ ] 
 
