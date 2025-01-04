@@ -19,6 +19,7 @@
     ../../common/firefox.nix
     ../../common/common-packages.nix
     # ../../common/concentration.nix
+    ../../common/secrets.nix
   ];
 
   # Bootloader.
@@ -132,27 +133,41 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   virtualisation.docker.enable = true;
 
-  users.users.osbm = {
-    isNormalUser = true;
-    description = "osbm";
-    extraGroups = ["networkmanager" "wheel" "docker"];
-    packages = with pkgs; [
-      kdePackages.kate
-      vscode
-      pkgs-unstable.discord # discord sucks
-      alacritty
-      pkgs-unstable.obsidian
-      mpv
-      libreoffice
-      blender
-      gimp
-      kitty
-      obs-studio
-      audacity
-      pkgs-unstable.qbittorrent
-      arduino-ide
-      prismlauncher
-    ];
+  users.users = {
+    osbm = {
+      isNormalUser = true;
+      description = "osbm";
+      extraGroups = ["networkmanager" "wheel" "docker"];
+      packages = with pkgs; [
+        kdePackages.kate
+        vscode
+        pkgs-unstable.discord # discord sucks
+        alacritty
+        pkgs-unstable.obsidian
+        mpv
+        libreoffice
+        blender
+        gimp
+        kitty
+        obs-studio
+        audacity
+        pkgs-unstable.qbittorrent
+        arduino-ide
+        prismlauncher
+      ];
+    };
+    bayram = {
+      isNormalUser = true;
+      description = "bayram";
+      initialPassword = "changeme";
+      extraGroups = ["networkmanager"];
+      packages = with pkgs; [
+        vlc
+        ungoogled-chromium
+        prismlauncher
+        qbittorrent
+      ];
+    };
   };
 
   nixpkgs.config.allowUnfree = true;
