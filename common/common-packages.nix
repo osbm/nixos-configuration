@@ -46,6 +46,7 @@
     nix-output-monitor
     yazi
     ripgrep
+    nh
   ];
 
   programs.steam = {
