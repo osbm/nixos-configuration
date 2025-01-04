@@ -47,6 +47,7 @@
     yazi
     ripgrep
     nh
+    comma
   ];
 
   programs.steam = {
