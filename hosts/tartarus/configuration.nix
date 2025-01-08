@@ -22,6 +22,7 @@
   ];
 
   blockYoutube = true;
+  blockTwitter = true;
 
   services.cloudflare-warp.enable = true;
 
