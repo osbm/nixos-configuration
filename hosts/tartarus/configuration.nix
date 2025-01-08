@@ -21,7 +21,7 @@
     ../../common/concentration.nix
   ];
 
-  concentration.blockYoutube = true;
+  blockYoutube = true;
 
   services.cloudflare-warp.enable = true;
 
