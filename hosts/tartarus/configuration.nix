@@ -24,7 +24,6 @@
   blockYoutube = true;
   blockTwitter = true;
 
-  services.cloudflare-warp.enable = true;
 
   services.vscode-server.enable = true;
 
