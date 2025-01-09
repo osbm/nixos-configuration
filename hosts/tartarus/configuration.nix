@@ -24,7 +24,6 @@
   blockYoutube = true;
   blockTwitter = true;
 
-
   services.vscode-server.enable = true;
 
   home-manager.useGlobalPkgs = true;
