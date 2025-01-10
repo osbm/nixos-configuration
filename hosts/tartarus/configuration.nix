@@ -21,7 +21,7 @@
     ../../common/concentration.nix
   ];
 
-  blockYoutube = true;
+  blockYoutube = false;
   blockTwitter = true;
 
   services.vscode-server.enable = true;
