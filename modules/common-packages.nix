@@ -34,7 +34,6 @@
     cmatrix
     inxi
     age
-    sops
     jq
     onefetch
     just
