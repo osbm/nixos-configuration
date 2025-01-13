@@ -79,6 +79,12 @@
         ];
       };
     };
+    homeConfigurations = {
+      osbm = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+        modules = [./modules/home.nix];
+      };
+    };
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
   };
 }
