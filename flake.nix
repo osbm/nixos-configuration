@@ -21,6 +21,15 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     osbm-nvim.url = "github:osbm/osbm-nvim";
+
+    raspberry-pi-nix = {
+      url = "github:nix-community/raspberry-pi-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nixos-hardware = {
+      url = "github:NixOS/nixos-hardware/master";
+    };
   };
 
   outputs = {
