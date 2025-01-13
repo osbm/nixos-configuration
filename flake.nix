@@ -43,11 +43,14 @@
           agenix.nixosModules.default
           home-manager.nixosModules.home-manager
           {
-            environment.systemPackages = [agenix.packages.${system}.default];
+            environment.systemPackages = [
+              agenix.packages.${system}.default
+              osbm-nvim.packages.${system}.default
+            ];
           }
         ];
         specialArgs = {
-          inherit system-label osbm-nvim;
+          inherit system-label;
         };
       };
       ymir = nixpkgs.lib.nixosSystem rec {
@@ -58,11 +61,14 @@
           agenix.nixosModules.default
           home-manager.nixosModules.home-manager
           {
-            environment.systemPackages = [agenix.packages.${system}.default];
+            environment.systemPackages = [
+              agenix.packages.${system}.default
+              osbm-nvim.packages.${system}.default
+            ];
           }
         ];
         specialArgs = {
-          inherit system-label osbm-nvim;
+          inherit system-label;
         };
       };
       harmonica = nixpkgs.lib.nixosSystem {
