@@ -8,6 +8,7 @@
     osbm = {
       isNormalUser = true;
       description = "osbm";
+      initialPassword = "changeme";
       extraGroups = ["networkmanager" "wheel" "docker"];
       openssh.authorizedKeys.keys = [
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPfnV+qqUCJf92npNW4Jy0hIiepCJFBDJHXBHnUlNX0k"
