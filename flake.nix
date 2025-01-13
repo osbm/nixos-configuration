@@ -95,16 +95,16 @@
           }
         ];
       };
-      pochita = nixpkgs.lib.nixosSystem rec {
-        system = "aarch64-linux";
-        modules = [
-          ./hosts/pochita/configuration.nix
-          agenix.nixosModules.default
-          raspberry-pi-nix.nixosModules.raspberry-pi
-          nixos-hardware.nixosModules.raspberry-pi-5
-          vscode-server.nixosModules.default
-        ];
-      };
+      # pochita = nixpkgs.lib.nixosSystem rec {
+      #   system = "aarch64-linux";
+      #   modules = [
+      #     ./hosts/pochita/configuration.nix
+      #     agenix.nixosModules.default
+      #     raspberry-pi-nix.nixosModules.raspberry-pi
+      #     nixos-hardware.nixosModules.raspberry-pi-5
+      #     vscode-server.nixosModules.default
+      #   ];
+      # };
     };
     homeConfigurations = {
       # doesnt work because my different systems have different stateVersions
