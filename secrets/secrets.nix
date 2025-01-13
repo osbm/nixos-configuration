@@ -8,7 +8,6 @@ let
     ymir
     tartarus
   ];
-
 in {
   "network-manager.age".publicKeys = machines ++ [osbm];
   "ssh-key-private.age".publicKeys = machines ++ [osbm];

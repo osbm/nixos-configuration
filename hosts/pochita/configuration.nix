@@ -1,11 +1,12 @@
 # This is the SD image initial configuration
-
-{ config, pkgs, lib, ... }:
-
-let
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}: let
   stateVersion = "25.05";
 in {
-
   imports = [
     ../../modules
   ];
@@ -13,29 +14,28 @@ in {
   enableKDE = false;
 
   blockYoutube = false;
-    blockTwitter = false;
+  blockTwitter = false;
 
   # Comment this line if you want a recent kernel, but
   # if it's not in the community cache the builder will compile it
-#   boot.kernelPackages = lib.mkForce pkgs.linuxKernel.packages.linux_rpi4;
-#   console = {
-#     font = "Lat2-Terminus16";
-#     keyMap = lib.mkForce "fr";
-#     useXkbConfig = true; # use xkb.options in tty.
-#   };
-
+  #   boot.kernelPackages = lib.mkForce pkgs.linuxKernel.packages.linux_rpi4;
+  #   console = {
+  #     font = "Lat2-Terminus16";
+  #     keyMap = lib.mkForce "fr";
+  #     useXkbConfig = true; # use xkb.options in tty.
+  #   };
 
   security.sudo.wheelNeedsPassword = false;
 
-#   # Initial network configuration
-#   networking = {
-#     hostName = "pixos";
-#     useDHCP = false;
-#     interfaces = {
-#       wlan0.useDHCP = false;
-#       eth0.useDHCP = true;
-#     };
-#   };
+  #   # Initial network configuration
+  #   networking = {
+  #     hostName = "pixos";
+  #     useDHCP = false;
+  #     interfaces = {
+  #       wlan0.useDHCP = false;
+  #       eth0.useDHCP = true;
+  #     };
+  #   };
   networking.networkmanager.ensureProfiles = {
     environmentFiles = [
       config.age.secrets.nm-secrets.path
@@ -87,24 +87,21 @@ in {
     };
   };
 
-
-
-#   # Some programs
+  #   # Some programs
   environment.systemPackages = with pkgs; [
-#     vim
-#     wget
-#     git
-#     htop
+    #     vim
+    #     wget
+    #     git
+    #     htop
   ];
 
   # Experimental features must be activated
-#   nix.settings = {
-#     trusted-users = [ "@wheel" ];
-#     experimental-features = [ "nix-command" "flakes" ];
-#     keep-outputs = true;
-#     keep-derivations = true;
-#   };
-
+  #   nix.settings = {
+  #     trusted-users = [ "@wheel" ];
+  #     experimental-features = [ "nix-command" "flakes" ];
+  #     keep-outputs = true;
+  #     keep-derivations = true;
+  #   };
 
   # The board and wanted kernel version
   raspberry-pi-nix = {
@@ -146,12 +143,11 @@ in {
             #nvme = {
             #  enable = true;
             #};
-
           };
           dt-overlays = {
             vc4-kms-v3d-pi5 = {
               enable = true;
-              params = { };
+              params = {};
             };
           };
           options = {

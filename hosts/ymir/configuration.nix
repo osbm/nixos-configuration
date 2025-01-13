@@ -144,8 +144,6 @@ in {
 
   # List services that you want to enable:
 
-
-
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];

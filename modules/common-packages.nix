@@ -82,7 +82,6 @@
       ChallengeResponseAuthentication = "no";
       UsePAM = false;
 
-
       # kick out inactive sessions
       ClientAliveCountMax = 5;
       ClientAliveInterval = 60;
