@@ -13,7 +13,8 @@
     fira-code-symbols
     mplus-outline-fonts.githubRelease
     dina-font
-    nerdfonts
+    nerd-fonts.fira-code
+    nerd-fonts.ubuntu
     proggyfonts
     source-sans
     source-sans-pro
