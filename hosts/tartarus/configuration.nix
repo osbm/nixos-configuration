@@ -30,7 +30,7 @@
 
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
-  home-manager.users.osbm = import ./home.nix;
+  home-manager.users.osbm = import ../../modules/home.nix { stateVersion = "24.05"; };
 
   virtualisation.virtualbox.host.enable = true;
   users.extraGroups.vboxusers.members = ["osbm"];
