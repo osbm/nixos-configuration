@@ -4,8 +4,6 @@
   config,
   ...
 }: {
-
-
   options = {
     arduinoSetup = lib.mkOption {
       type = lib.types.bool;

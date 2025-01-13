@@ -13,7 +13,7 @@
   nixpkgs.overlays = [
     (final: super: {
       makeModulesClosure = x:
-        super.makeModulesClosure (x // { allowMissing = true; });
+        super.makeModulesClosure (x // {allowMissing = true;});
     })
   ];
 
@@ -148,7 +148,6 @@
       };
     };
   };
-
 
   # Enable OpenSSH out of the box.
   services.sshd.enable = true;
