@@ -92,6 +92,7 @@
         # get state version from the current hosts' configuration.nix
         # specialArgs = { stateVersion = "24.05"; };
       };
+    };
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
     formatter.aarch64-linux = nixpkgs.legacyPackages.aarch64-linux.alejandra;
   };
