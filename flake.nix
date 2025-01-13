@@ -65,6 +65,12 @@
           inherit system-label osbm-nvim;
         };
       };
+      harmonica = nixpkgs.lib.nixosSystem {
+        modules = [
+          "${nixpkgs}/nixos/modules/installer/sd-card/sd-image-aarch64.nix"
+          ./hosts/harmonica/configuration.nix
+        ];
+      };
     };
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
   };
