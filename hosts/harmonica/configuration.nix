@@ -157,10 +157,10 @@
   services.timesyncd.enable = true;
 
   # ! Change the following configuration
-  users.users.bob = {
+  users.users.osbm = {
     isNormalUser = true;
-    home = "/home/bob";
-    description = "Bob";
+    home = "/home/osbm";
+    description = "osbm";
     extraGroups = ["wheel" "networkmanager"];
     # ! Be sure to put your own public key here
     openssh.authorizedKeys.keys = ["a public key"];
@@ -171,5 +171,5 @@
     wheelNeedsPassword = false;
   };
   # ! Be sure to change the autologinUser.
-  services.getty.autologinUser = "bob";
+  services.getty.autologinUser = "osbm";
 }
