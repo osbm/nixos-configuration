@@ -27,6 +27,8 @@ in {
   home-manager.users.osbm = import ../../modules/home.nix {
     inherit config pkgs stateVersion;
   };
+
+
   virtualisation.virtualbox.host.enable = true;
   users.extraGroups.vboxusers.members = ["osbm"];
 
