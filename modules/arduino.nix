@@ -13,7 +13,7 @@
   };
 
   config = lib.mkMerge [
-    (lib.mkIf config.arduino {
+    (lib.mkIf config.arduinoSetup {
       environment.systemPackages = with pkgs; [
         arduino-ide
         adafruit-nrfutil
