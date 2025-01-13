@@ -6,7 +6,9 @@
   pkgs,
   system-label,
   ...
-}: {
+}: let
+  stateVersion = "24.11";
+in {
   imports = [
     ./hardware-configuration.nix
     ../../modules
@@ -20,10 +22,11 @@
   networking.hostName = "ymir"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
-  home-manager.users.osbm = import ../../modules/home.nix { stateVersion = "24.11"; };
+  home-manager.users.osbm = import ../../modules/home.nix {
+    inherit config pkgs stateVersion;
+  };
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -204,5 +207,5 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.11"; # Did you read the comment?
+  system.stateVersion = stateVersion; # Did you read the comment?
 }

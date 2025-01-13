@@ -6,7 +6,9 @@
   pkgs,
   system-label,
   ...
-}: {
+}: let
+  stateVersion = "24.05";
+in {
   imports = [
     ./hardware-configuration.nix
     ../../modules
@@ -18,13 +20,13 @@
   boot.binfmt.emulatedSystems = ["aarch64-linux"];
   nix.settings.extra-platforms = config.boot.binfmt.emulatedSystems;
 
-
   services.vscode-server.enable = true;
 
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
-  home-manager.users.osbm = import ../../modules/home.nix { stateVersion = "24.05"; };
-
+  home-manager.users.osbm = import ../../modules/home.nix {
+    inherit config pkgs stateVersion;
+  };
   virtualisation.virtualbox.host.enable = true;
   users.extraGroups.vboxusers.members = ["osbm"];
 
@@ -117,5 +119,5 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.05"; # Did you read the comment?
+  system.stateVersion = stateVersion; # Did you read the comment?
 }
