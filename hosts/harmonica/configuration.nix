@@ -91,8 +91,8 @@
       interfaces = ["wlan0"];
       # ! Change the following to connect to your own network
       networks = {
-        "<ssid>" = {
-          psk = "<ssid-key>";
+        "${secrets.home-wifi-ssid.age}" = {
+          psk = "${secrets.home-wifi-password.age}";
         };
       };
     };
