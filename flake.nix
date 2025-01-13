@@ -71,11 +71,17 @@
           inherit system-label;
         };
       };
-      harmonica = nixpkgs.lib.nixosSystem {
+      harmonica = nixpkgs.lib.nixosSystem rec {
+        system = "aarch64-linux";
         modules = [
           "${nixpkgs}/nixos/modules/installer/sd-card/sd-image-aarch64.nix"
           agenix.nixosModules.default
           ./hosts/harmonica/configuration.nix
+          {
+            environment.systemPackages = [
+              agenix.packages.${system}.default
+            ];
+          }
         ];
       };
     };
