@@ -27,3 +27,5 @@ I didnt get these setup yet.
 - [ ] see which derivations will be built and which will be downloaded from cache or which is already present in the nix store.
 - [ ] see which python packages are giving build errors.
 - [ ] home-manager setup
+- [ ] make a development environment nix repository
+
