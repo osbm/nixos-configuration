@@ -19,6 +19,24 @@
     userName = "osbm";
   };
 
+  programs.ssh = {
+    enable = true;
+    hashKnownHosts = true;
+    compression = true;
+
+    matchBlocks = {
+      "tartarus" = {
+        hostname = "192.168.0.4";
+        user = "osbm";
+        identityFile = "/home/osbm/.ssh/id_ed25519";
+      };
+      "ymir" = {
+        hostname = "192.168.0.2";
+        user = "osbm";
+        identityFile = "/home/osbm/.ssh/id_ed25519";
+      };
+    };
+  };
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new Home Manager release introduces backwards
