@@ -8,4 +8,6 @@ let
   ];
 in {
   "network-manager.age".publicKeys = machines;
+  "ssh-key-private.age".publicKeys = machines;
+  "ssh-key-public.age".publicKeys = machines;
 }
