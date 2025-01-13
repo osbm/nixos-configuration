@@ -31,7 +31,7 @@
         identityFile = "/home/osbm/.ssh/id_ed25519";
         extraOptions = {
           "RemoteCommand" = "fish";
-        }
+        };
       };
       "ymir" = {
         hostname = "192.168.0.2";
@@ -39,7 +39,7 @@
         identityFile = "/home/osbm/.ssh/id_ed25519";
         extraOptions = {
           "RemoteCommand" = "fish";
-        }
+        };
       };
     };
   };
