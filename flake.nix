@@ -102,6 +102,7 @@
           agenix.nixosModules.default
           raspberry-pi-nix.nixosModules.raspberry-pi
           nixos-hardware.nixosModules.raspberry-pi-5
+          vscode-server.nixosModules.default
         ];
       };
     };
