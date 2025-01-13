@@ -39,6 +39,8 @@
     agenix,
     osbm-nvim,
     home-manager,
+    raspberry-pi-nix,
+    nixos-hardware,
     ...
   }: {
     nixosConfigurations = let
@@ -93,8 +95,19 @@
           }
         ];
       };
+      pochita = nixpkgs.lib.nixosSystem rec {
+        system = "aarch64-linux";
+        modules = [
+          ./hosts/pochita/configuration.nix
+          agenix.nixosModules.default
+          raspberry-pi-nix.nixosModules.raspberry-pi
+          nixos-hardware.nixosModules.raspberry-pi-5
+        ];
+      };
     };
     homeConfigurations = {
+      # doesnt work because my different systems have different stateVersions
+      # i dont know how to get the stateVersion from the current host
       osbm = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
         modules = [./modules/home.nix];
