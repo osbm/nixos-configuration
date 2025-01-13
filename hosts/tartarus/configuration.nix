@@ -46,17 +46,6 @@ in {
   # Enable networking
   networking.networkmanager.enable = true;
 
-  # Enable the X11 windowing system.
-  # You can disable this if you're only using the Wayland session.
-  services.xserver.enable = true;
-
-  # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -79,19 +68,9 @@ in {
     description = "osbm";
     extraGroups = ["networkmanager" "wheel" "docker"];
     packages = with pkgs; [
-      kdePackages.kate
-      vscode
-      discord # discord sucks
-      alacritty
-      obsidian
-      mpv
-      libreoffice
-      blender
-      gimp
-      kitty
-      obs-studio
-      audacity
-      qbittorrent
+    ];
+    openssh.authorizedKeys.keys = [
+     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPfnV+qqUCJf92npNW4Jy0hIiepCJFBDJHXBHnUlNX0k"
     ];
   };
 
