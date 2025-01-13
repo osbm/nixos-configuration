@@ -1,6 +1,5 @@
 {
   pkgs,
-  pkgs-unstable,
   lib,
   config,
   ...
@@ -21,7 +20,7 @@
     tlrc
     wakeonlan
     # neovim
-    pkgs-unstable.ani-cli
+    ani-cli
     btop
     pciutils
     nodePackages.npm

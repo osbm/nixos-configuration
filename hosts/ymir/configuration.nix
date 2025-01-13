@@ -4,7 +4,6 @@
 {
   config,
   pkgs,
-  pkgs-unstable,
   system-label,
   osbm-nvim,
   ...
@@ -141,9 +140,9 @@
       packages = with pkgs; [
         kdePackages.kate
         vscode
-        pkgs-unstable.discord # discord sucks
+        discord # discord sucks
         alacritty
-        pkgs-unstable.obsidian
+        obsidian
         mpv
         libreoffice
         blender
@@ -151,7 +150,7 @@
         kitty
         obs-studio
         audacity
-        pkgs-unstable.qbittorrent
+        qbittorrent
         arduino-ide
         prismlauncher
       ];

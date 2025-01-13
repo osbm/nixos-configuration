@@ -2,7 +2,6 @@
   pkgs,
   lib,
   config,
-  pkgs-unstable,
   ...
 }: {
   time.timeZone = "Europe/Istanbul";
@@ -31,7 +30,7 @@
     type = "fcitx5";
     enable = true;
     fcitx5.addons = with pkgs; [
-      pkgs-unstable.fcitx5-mozc #TODO revert back to stable once its updated
+      fcitx5-mozc
       fcitx5-gtk
       fcitx5-nord # a color theme
     ];
