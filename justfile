@@ -26,3 +26,6 @@ clean:
   sudo nix-env --profile /nix/var/nix/profiles/system --delete-generations old
   # home-manager expire-generations now
   sudo nix-collect-garbage --delete-older-than 3d
+
+build-sd-image-harmonica: check-git
+  nix build -L .#nixosConfigurations.harmonica.config.system.build.sdImage
