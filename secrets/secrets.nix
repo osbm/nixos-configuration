@@ -7,9 +7,5 @@ let
     tartarus
   ];
 in {
-  ymir = ymir;
-  tartarus = tartarus;
-
-  "home-wifi-ssid.age".publicKeys = machines;
-  "home-wifi-password.age".publicKeys = machines;
+  "network-manager.age".publicKeys = machines;
 }
