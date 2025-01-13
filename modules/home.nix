@@ -29,11 +29,17 @@
         hostname = "192.168.0.4";
         user = "osbm";
         identityFile = "/home/osbm/.ssh/id_ed25519";
+        extraOptions = {
+          "RemoteCommand" = "fish";
+        }
       };
       "ymir" = {
         hostname = "192.168.0.2";
         user = "osbm";
         identityFile = "/home/osbm/.ssh/id_ed25519";
+        extraOptions = {
+          "RemoteCommand" = "fish";
+        }
       };
     };
   };
