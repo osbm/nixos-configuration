@@ -23,6 +23,10 @@
   blockYoutube = false;
   blockTwitter = true;
 
+  boot.binfmt.emulatedSystems = ["aarch64-linux"];
+  nix.settings.extra-platforms = config.boot.binfmt.emulatedSystems;
+
+
   services.vscode-server.enable = true;
 
   home-manager.useGlobalPkgs = true;
