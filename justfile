@@ -1,11 +1,9 @@
 _default:
   @just --list --unsorted
 
-
 check-git:
   # git must be clean
   test -z "$(git status --porcelain)"
-
 
 [linux]
 build *args: check-git
@@ -23,6 +21,9 @@ check:
   nix flake check
 
 clean:
+  rm result
+
+collect-garbage:
   sudo nix-env --profile /nix/var/nix/profiles/system --delete-generations old
   # home-manager expire-generations now
   sudo nix-collect-garbage --delete-older-than 3d
