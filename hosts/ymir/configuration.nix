@@ -14,6 +14,11 @@ in {
     ../../modules
   ];
 
+  blockYoutube = false;
+  blockTwitter = true;
+
+  enableKDE = true;
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -111,28 +116,6 @@ in {
         enable = false;
         unitConfig.DefaultDependencies = "no";
       };
-    };
-  };
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
-
-  users.users = {
-    osbm = {
-      isNormalUser = true;
-      description = "osbm";
-      extraGroups = ["networkmanager" "wheel" "docker"];
-      packages = with pkgs; [
-      ];
-    };
-    bayram = {
-      isNormalUser = true;
-      description = "bayram";
-      initialPassword = "changeme";
-      extraGroups = ["networkmanager"];
-      packages = with pkgs; [
-      ];
     };
   };
 

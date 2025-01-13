@@ -17,10 +17,10 @@ in {
   blockYoutube = false;
   blockTwitter = true;
 
+  enableKDE = true;
+
   boot.binfmt.emulatedSystems = ["aarch64-linux"];
   nix.settings.extra-platforms = config.boot.binfmt.emulatedSystems;
-
-
 
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
@@ -59,20 +59,6 @@ in {
   hardware.bluetooth.enable = true; # enables support for Bluetooth
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.osbm = {
-    isNormalUser = true;
-    description = "osbm";
-    extraGroups = ["networkmanager" "wheel" "docker"];
-    packages = with pkgs; [
-    ];
-    openssh.authorizedKeys.keys = [
-     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPfnV+qqUCJf92npNW4Jy0hIiepCJFBDJHXBHnUlNX0k"
-    ];
-  };
 
   environment.systemPackages = with pkgs; [
   ];
