@@ -19,8 +19,6 @@
     unzip
     tlrc
     wakeonlan
-    # neovim
-
     btop
     pciutils
     nodePackages.npm
