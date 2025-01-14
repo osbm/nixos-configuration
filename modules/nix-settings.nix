@@ -18,7 +18,7 @@
     options = "--delete-older-than 30d";
   };
 
-  nix.nixPath = ["nixpkgs=${pkgs.path}"];
+  # nix.nixPath = ["nixpkgs=${pkgs.path}"];
 
   # disable the database error TODO add nix-index search
   programs.command-not-found.enable = false;
