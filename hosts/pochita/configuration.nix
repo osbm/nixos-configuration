@@ -99,7 +99,7 @@ in {
 
 
   services.getty.autologinUser = "osbm";
-  networking.hostname = "pochita";
+  # networking.hostname = "pochita";
    # The board and wanted kernel version
   raspberry-pi-nix = {
     board = "bcm2712";
