@@ -14,9 +14,13 @@ in {
   ];
 
   enableKDE = false;
+  enableFonts = false;
 
   blockYoutube = false;
   blockTwitter = false;
+
+  i18n.inputMethod.enable = lib.mkForce false; # no need for japanese input method
+  programs.firefox.enable = lib.mkForce false; # no need for firefox
 
   # networking.hostname = "pochita"; # why setting hostname gives me an error?
 
