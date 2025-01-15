@@ -1,7 +1,7 @@
 # nixos is life
 The nix configuration of mine. My intentions are just to maintain my configuration and to contribute to the nix community.
 
-Here i have 4 machines.
+Here i have 4 machines and 1 sd card image that i maintain.
 - Laptop **tartarus** (faulty hardware, nvidia gpu doesnt work)
 - Desktop **ymir** (beast, my most prized possesion as of now)
 - Raspberry Pi 5 **pochita** (a server that i experiment with)
@@ -10,6 +10,28 @@ Here i have 4 machines.
 I didnt get these setup yet.
 - Raspberry Pi Zero 2W **harmonica** (small machine for small tasks and cronjobs) (not setup yet)
 - Android phone (termux) **android** (not setup yet)
+
+## How to use raspberry pi 5
+
+I have 2 configurations for the raspberry pi 5. One is for the sd card (basically bootstraps the system) and the other is for my customized system itself.
+
+build the image first (this took about 4 hours on ymir (binfmt for aarch64 needs to be enabled if you are building on x86_64))
+```sh
+$ nix build -L '.#nixosConfigurations.pochita-sd.config.system.build.sdImage'
+```
+
+then to flash the image to the sd card enable zstd
+```sh
+$ nix-shell -p zstd
+```
+
+then flash the image to the sd card
+```sh
+$ zstdcat nixos-sd-image-24.05.20241116.e8c38b7-aarch64-linux.img.zst | dd of=/dev/sda status=progress
+```
+
+and voila! when you plug the sd card to the raspberry pi 5 it will boot up with the configuration that you have built. And then you can ssh into it and further configure it.
+
 
 # To-do list
 
