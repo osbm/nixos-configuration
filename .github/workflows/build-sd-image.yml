@@ -1,0 +1,29 @@
+name: Build SD image for Raspberry Pi 5
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-sd-image:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install Nix
+        uses: cachix/install-nix-action@v16
+
+      - name: Build SD image
+        run: nix build -L '.#nixosConfigurations.pochita-sd.config.system.build.sdImage
+
+      - name: Zip the Resulting SD image
+        run: |
+          mkdir -p sd-image
+          cp -r result/* sd-image
+          zip -r sd-image.zip sd-image
+
+      - name: Upload SD image
+        uses: actions/upload-artifact@v2
+        with:
+          name: sd-image
+
