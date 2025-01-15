@@ -49,6 +49,11 @@
         #   "RemoteCommand" = "fish";
         # };
       };
+      "pochita" = {
+        hostname = "192.168.0.9";
+        user = "osbm";
+        identityFile = "/home/osbm/.ssh/id_ed25519";
+      };
     };
   };
   # This value determines the Home Manager release that your
