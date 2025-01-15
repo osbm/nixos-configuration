@@ -4,10 +4,11 @@ The nix configuration of mine. My intentions are just to maintain my configurati
 Here i have 4 machines.
 - Laptop **tartarus** (faulty hardware, nvidia gpu doesnt work)
 - Desktop **ymir** (beast, my most prized possesion as of now)
+- Raspberry Pi 5 **pochita** (a server that i experiment with)
+- Raspberry Pi 5 SD image **pochita-sd** (produces an sd image that could be used to flash the sd card of a rpi-5)
 
 I didnt get these setup yet.
 - Raspberry Pi Zero 2W **harmonica** (small machine for small tasks and cronjobs) (not setup yet)
-- Raspberry Pi 5 **pochita** (a server that i experiment with) (not setup yet)
 - Android phone (termux) **android** (not setup yet)
 
 # To-do list
@@ -22,10 +23,10 @@ I didnt get these setup yet.
 - [ ] build my qmk keyboard with nix
 - agenix
     - [ ] add my gpg keys
-    - [ ] add ssh keys so that machines can connect to each other
-- [ ] module system with options
+    - [x] add ssh keys so that machines can connect to each other
+- [x] module system with options
 - [ ] see which derivations will be built and which will be downloaded from cache or which is already present in the nix store.
 - [ ] see which python packages are giving build errors.
-- [ ] home-manager setup
+- [x] home-manager setup
 - [ ] make a development environment nix repository
 
