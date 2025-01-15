@@ -16,56 +16,6 @@ in {
   blockYoutube = false;
   blockTwitter = false;
 
-  networking.networkmanager.ensureProfiles = {
-    environmentFiles = [
-      config.age.secrets.nm-secrets.path
-    ];
-
-    profiles = {
-      House_Bayram = {
-        connection = {
-          id = "House_Bayram";
-          type = "wifi";
-        };
-        ipv4 = {
-          method = "auto";
-        };
-        ipv6 = {
-          addr-gen-mode = "stable-privacy";
-          method = "auto";
-        };
-        wifi = {
-          mode = "infrastructure";
-          ssid = "House_Bayram";
-        };
-        wifi-security = {
-          key-mgmt = "wpa-psk";
-          psk = "$HOME_WIFI";
-        };
-      };
-      it_hurts_when_IP = {
-        connection = {
-          id = "it_hurts_when_IP";
-          type = "ethernet";
-        };
-        ipv4 = {
-          method = "auto";
-        };
-        ipv6 = {
-          addr-gen-mode = "stable-privacy";
-          method = "auto";
-        };
-        wifi = {
-          mode = "infrastructure";
-          ssid = "it_hurts_when_IP";
-        };
-        wifi-security = {
-          key-mgmt = "wpa-psk";
-          psk = "$HOME_WIFI";
-        };
-      };
-    };
-  };
 
   #   # Some programs
   environment.systemPackages = with pkgs; [
