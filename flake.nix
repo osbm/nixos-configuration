@@ -27,9 +27,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixos-hardware = {
-      url = "github:NixOS/nixos-hardware/master";
-    };
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
   outputs = {
@@ -54,8 +52,8 @@
           home-manager.nixosModules.home-manager
           {
             environment.systemPackages = [
-              agenix.packages.${system}.default
-              osbm-nvim.packages.${system}.default
+              agenix.packages.x86_64-linux.default
+              osbm-nvim.packages.x86_64-linux.default
             ];
           }
         ];
@@ -71,8 +69,8 @@
           home-manager.nixosModules.home-manager
           {
             environment.systemPackages = [
-              agenix.packages.${system}.default
-              osbm-nvim.packages.${system}.default
+              agenix.packages.x86_64-linux.default
+              osbm-nvim.packages.x86_64-linux.default
             ];
           }
         ];
@@ -87,7 +85,7 @@
           ./hosts/harmonica/configuration.nix
           {
             environment.systemPackages = [
-              agenix.packages.${system}.default
+              agenix.packages.aarch64-linux.default
             ];
           }
         ];
@@ -102,8 +100,8 @@
           home-manager.nixosModules.home-manager
           {
             environment.systemPackages = [
-              agenix.packages.${system}.default
-              osbm-nvim.packages.${system}.default
+              agenix.packages.aarch64-linux.default
+              osbm-nvim.packages.aarch64-linux.default
             ];
           }
         ];

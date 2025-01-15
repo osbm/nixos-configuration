@@ -24,8 +24,6 @@
     hashKnownHosts = true;
     compression = true;
 
-
-
     matchBlocks = {
       "tartarus" = {
         hostname = "192.168.0.4";

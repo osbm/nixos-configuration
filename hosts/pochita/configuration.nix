@@ -41,7 +41,7 @@ in {
 
   services.getty.autologinUser = "osbm";
 
-   # The board and wanted kernel version
+  # The board and wanted kernel version
   raspberry-pi-nix = {
     board = "bcm2712";
     #kernel-version = "v6_10_12";

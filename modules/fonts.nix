@@ -4,7 +4,6 @@
   config,
   ...
 }: {
-
   options = {
     enableFonts = lib.mkOption {
       type = lib.types.bool;
@@ -36,6 +35,4 @@
       ];
     })
   ];
-
-
 }
