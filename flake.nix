@@ -44,7 +44,7 @@
     nixosConfigurations = let
       system-label = self.shortRev or self.dirtyShortRev or self.lastModified or "unknown";
     in {
-      tartarus = nixpkgs.lib.nixosSystem rec {
+      tartarus = nixpkgs.lib.nixosSystem {
         modules = [
           ./hosts/tartarus/configuration.nix
           vscode-server.nixosModules.default
@@ -61,7 +61,7 @@
           inherit system-label;
         };
       };
-      ymir = nixpkgs.lib.nixosSystem rec {
+      ymir = nixpkgs.lib.nixosSystem {
         modules = [
           ./hosts/ymir/configuration.nix
           vscode-server.nixosModules.default
@@ -78,7 +78,7 @@
           inherit system-label;
         };
       };
-      harmonica = nixpkgs.lib.nixosSystem rec {
+      harmonica = nixpkgs.lib.nixosSystem {
         modules = [
           "${nixpkgs}/nixos/modules/installer/sd-card/sd-image-aarch64.nix"
           agenix.nixosModules.default
@@ -90,7 +90,7 @@
           }
         ];
       };
-      pochita = nixpkgs.lib.nixosSystem rec {
+      pochita = nixpkgs.lib.nixosSystem {
         modules = [
           ./hosts/pochita/configuration.nix
           raspberry-pi-nix.nixosModules.raspberry-pi
@@ -109,7 +109,7 @@
           inherit system-label;
         };
       };
-      pochita-sd = nixpkgs.lib.nixosSystem rec {
+      pochita-sd = nixpkgs.lib.nixosSystem {
         modules = [
           ./hosts/pochita-sd/configuration.nix
           raspberry-pi-nix.nixosModules.raspberry-pi
