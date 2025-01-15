@@ -51,4 +51,6 @@ and voila! when you plug the sd card to the raspberry pi 5 it will boot up with 
 - [ ] see which python packages are giving build errors.
 - [x] home-manager setup
 - [ ] make a development environment nix repository
+- [ ] enable swap on pochita
+- [ ] learnis it possible to enable swap with sd-image?
 
