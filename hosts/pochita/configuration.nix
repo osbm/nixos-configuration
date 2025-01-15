@@ -22,7 +22,8 @@ in {
   i18n.inputMethod.enable = lib.mkForce false; # no need for japanese input method
   programs.firefox.enable = lib.mkForce false; # no need for firefox
 
-  # networking.hostname = "pochita"; # why setting hostname gives me an error?
+  networking.hostName = "pochita";
+  # log of shame: osbm blamed nix when he wrote "hostname" instead of "hostName"
 
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
