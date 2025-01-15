@@ -31,11 +31,8 @@ in {
     inherit config pkgs stateVersion;
   };
 
-  #   # Some programs
   environment.systemPackages = with pkgs; [
-
   ];
-
 
   security.sudo = {
     enable = true;
