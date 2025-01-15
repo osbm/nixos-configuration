@@ -33,6 +33,7 @@
 
       nix.settings.trusted-users = ["root" "osbm"];
 
+      nixpkgs.hostPlatform = "aarch64-linux";
 
       services.openssh = {
         enable = true;

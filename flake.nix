@@ -47,7 +47,6 @@
       system-label = self.shortRev or self.dirtyShortRev or self.lastModified or "unknown";
     in {
       tartarus = nixpkgs.lib.nixosSystem rec {
-        system = "x86_64-linux";
         modules = [
           ./hosts/tartarus/configuration.nix
           vscode-server.nixosModules.default
@@ -65,7 +64,6 @@
         };
       };
       ymir = nixpkgs.lib.nixosSystem rec {
-        system = "x86_64-linux";
         modules = [
           ./hosts/ymir/configuration.nix
           vscode-server.nixosModules.default
@@ -83,7 +81,6 @@
         };
       };
       harmonica = nixpkgs.lib.nixosSystem rec {
-        system = "aarch64-linux";
         modules = [
           "${nixpkgs}/nixos/modules/installer/sd-card/sd-image-aarch64.nix"
           agenix.nixosModules.default
@@ -96,7 +93,6 @@
         ];
       };
       pochita = nixpkgs.lib.nixosSystem rec {
-        system = "aarch64-linux";
         modules = [
           ./hosts/pochita/configuration.nix
           raspberry-pi-nix.nixosModules.raspberry-pi
@@ -116,7 +112,6 @@
         };
       };
       pochita-sd = nixpkgs.lib.nixosSystem rec {
-        system = "aarch64-linux";
         modules = [
           ./hosts/pochita-sd/configuration.nix
           raspberry-pi-nix.nixosModules.raspberry-pi
