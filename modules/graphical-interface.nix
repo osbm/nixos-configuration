@@ -29,6 +29,7 @@
       services.printing.enable = true;
 
       environment.systemPackages = with pkgs; [
+        sddm-sugar-dark
         vscode
         discord # discord sucks
         alacritty
