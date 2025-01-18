@@ -97,6 +97,7 @@ in {
       "browser.newtabpage.activity-stream.system.showSponsored" = false;
       "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
       "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+      "ui.key.menuAccessKeyFocuses" = false;
     };
   };
 }
