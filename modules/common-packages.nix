@@ -44,6 +44,7 @@
     ripgrep
     nh
     comma
+    bat
   ];
 
   programs.gnupg.agent = {
