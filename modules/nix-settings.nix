@@ -5,7 +5,21 @@
   ...
 }: {
   # Allow unfree packages
-  nixpkgs.config.allowUnfree = true; # TODO: replace this with allowUnfreePredicate
+  # nixpkgs.config.allowUnfree = true; # TODO: replace this with allowUnfreePredicate
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "vscode" # TODO: remove this
+    "discord" # TODO: remove this
+    "obsidian"
+    "steam"
+    "steam-unwrapped"
+    # nvidia related (i have to)
+    "nvidia-x11"
+    "cuda_cudart"
+    "libcublas"
+    "cuda_cccl"
+    "cuda_nvcc"
+    "nvidia-settings"
+  ];
 
   # enable nix flakes
   nix.settings.experimental-features = ["nix-command" "flakes"];
