@@ -32,4 +32,4 @@ jobs:
             system = ${{ matrix.platform }}
 
       - name: Build my packages
-        run: nix build -L "github:nixos/nixpkgs/${{ matrix.nixpkgs }}#${{ matrix.myPackages }}"
+        run: nix build --log-lines 300 -L "github:nixos/nixpkgs/${{ matrix.nixpkgs }}#${{ matrix.myPackages }}"
