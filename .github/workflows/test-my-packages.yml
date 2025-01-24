@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-24.04
     strategy:
       matrix:
-        nixpkgs: [nixos-unstable, nixpkgs-unstable, master] # TODO: add stable branch once they are available
+        nixpkgs-branch: [nixos-unstable, nixpkgs-unstable, master] # TODO: add stable branch once they are available
         # platform: [x86_64-linux, aarch64-linux] #TODO: add aarch64-linux
         myPackages: # TODO automate this list
           - python313Packages.runstats
@@ -31,5 +31,11 @@ jobs:
         #   extra_nix_config: |
         #     # system = ${{ matrix.platform }}
 
+      # i want to create .drv file and check if they exist in the nixos.cache
+      # if they dont exist, i want to skip the build
+
+      - name: Check if the dependencies are in the cache
+        run: nix path-info --closure-size --eval-store auto --store https://cache.nixos.org 'github:nixos/nixpkgs/${{ matrix.nixpkgs-branch }}${{ matrix.myPackages }}^*'
+
       - name: Build my packages
-        run: nix build -L "github:nixos/nixpkgs/${{ matrix.nixpkgs }}#${{ matrix.myPackages }}"
+        run: nix build -L "github:nixos/nixpkgs/${{ matrix.nixpkgs-branch }}#${{ matrix.myPackages }}"
