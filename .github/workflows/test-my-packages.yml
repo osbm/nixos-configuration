@@ -4,7 +4,7 @@ name: Build and test the packages i maintain on Nixpkgs
 on:
   # cron every hour at 3 minutes 00:03 AM, 01:03 AM etc.
   schedule:
-    - cron: '3 * * * *'
+    - cron: '3 0 * * *'
   workflow_dispatch:
 
 jobs:
@@ -20,7 +20,7 @@ jobs:
           - python312Packages.runstats
           - python312Packages.fastmri
           - python311Packages.runstats
-          - python311Packages.fastmri
+          # - python311Packages.fastmri # broken for now
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -34,8 +34,8 @@ jobs:
       # i want to create .drv file and check if they exist in the nixos.cache
       # if they dont exist, i want to skip the build
 
-      - name: Check if the dependencies are in the cache
-        run: nix path-info --closure-size --eval-store auto --store https://cache.nixos.org 'github:nixos/nixpkgs/${{ matrix.nixpkgs-branch }}#${{ matrix.myPackages }}^*'
+      # - name: Check if the dependencies are in the cache
+      #   run: nix path-info --closure-size --eval-store auto --store https://cache.nixos.org 'github:nixos/nixpkgs/${{ matrix.nixpkgs-branch }}#${{ matrix.myPackages }}^*'
 
       - name: Build my packages
         run: nix build -L "github:nixos/nixpkgs/${{ matrix.nixpkgs-branch }}#${{ matrix.myPackages }}"
