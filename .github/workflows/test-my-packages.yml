@@ -10,16 +10,17 @@ on:
 jobs:
   build:
     runs-on: ubuntu-24.04
-    matrix:
-      nixpkgs: [nixos-unstable, nixpkgs-unstable, master]
-      platform: [x86_64-linux, aarch64-linux]
-      myPackages: # TODO automate this list
-        - python313Packages.runstats
-        - python313Packages.fastmri
-        - python312Packages.runstats
-        - python312Packages.fastmri
-        - python311Packages.runstats
-        - python311Packages.fastmri
+    strategy:
+      matrix:
+        nixpkgs: [nixos-unstable, nixpkgs-unstable, master]
+        platform: [x86_64-linux, aarch64-linux]
+        myPackages: # TODO automate this list
+          - python313Packages.runstats
+          - python313Packages.fastmri
+          - python312Packages.runstats
+          - python312Packages.fastmri
+          - python311Packages.runstats
+          - python311Packages.fastmri
     steps:
       - name: Checkout
         uses: actions/checkout@v4
