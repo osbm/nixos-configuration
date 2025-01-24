@@ -13,7 +13,7 @@ jobs:
     strategy:
       matrix:
         nixpkgs: [nixos-unstable, nixpkgs-unstable, master]
-        platform: [x86_64-linux, aarch64-linux]
+        # platform: [x86_64-linux, aarch64-linux] #TODO: add aarch64-linux
         myPackages: # TODO automate this list
           - python313Packages.runstats
           - python313Packages.fastmri
@@ -27,9 +27,9 @@ jobs:
 
       - name: Install Nix
         uses: cachix/install-nix-action@v30
-        with:
-          extra_nix_config: |
-            system = ${{ matrix.platform }}
+        # with:
+        #   extra_nix_config: |
+        #     # system = ${{ matrix.platform }}
 
       - name: Build my packages
-        run: nix build --log-lines 300 -L "github:nixos/nixpkgs/${{ matrix.nixpkgs }}#${{ matrix.myPackages }}"
+        run: nix build -L "github:nixos/nixpkgs/${{ matrix.nixpkgs }}#${{ matrix.myPackages }}"
