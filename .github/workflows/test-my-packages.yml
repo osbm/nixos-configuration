@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-24.04
     strategy:
       matrix:
-        nixpkgs: [nixos-unstable, nixpkgs-unstable, master]
+        nixpkgs: [nixos-unstable, nixpkgs-unstable, master] # TODO: add stable branch once they are available
         # platform: [x86_64-linux, aarch64-linux] #TODO: add aarch64-linux
         myPackages: # TODO automate this list
           - python313Packages.runstats
