@@ -35,7 +35,7 @@ jobs:
       # if they dont exist, i want to skip the build
 
       - name: Check if the dependencies are in the cache
-        run: nix path-info --closure-size --eval-store auto --store https://cache.nixos.org 'github:nixos/nixpkgs/${{ matrix.nixpkgs-branch }}${{ matrix.myPackages }}^*'
+        run: nix path-info --closure-size --eval-store auto --store https://cache.nixos.org 'github:nixos/nixpkgs/${{ matrix.nixpkgs-branch }}#${{ matrix.myPackages }}^*'
 
       - name: Build my packages
         run: nix build -L "github:nixos/nixpkgs/${{ matrix.nixpkgs-branch }}#${{ matrix.myPackages }}"
