@@ -130,7 +130,7 @@
     };
     homeConfigurations = {
       # doesnt work because my different systems have different stateVersions
-      # i dont know how to get the stateVersion from the current host
+      # I dont know how to get the stateVersion from the current host
       osbm = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
         modules = [./modules/home.nix];
