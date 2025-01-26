@@ -21,8 +21,8 @@
       # Enable the KDE Plasma Desktop Environment.
       services.displayManager.sddm = {
         enable = true;
-        theme = "sugar-dark";
-        wayland.enable = true;
+        # theme = "sugar-dark"; # looks ugly i give up
+        # wayland.enable = true;
       };
       services.desktopManager.plasma6.enable = true;
 
