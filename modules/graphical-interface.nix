@@ -22,6 +22,7 @@
       services.displayManager.sddm = {
         enable = true;
         theme = "sugar-dark";
+        wayland = true;
       };
       services.desktopManager.plasma6.enable = true;
 
