@@ -7,7 +7,7 @@
   system-label,
   ...
 }: let
-  stateVersion = "24.11";
+  stateVersion = "25.05";
 in {
   imports = [
     ./hardware-configuration.nix
