@@ -127,6 +127,12 @@
           raspberry-pi-nix.nixosModules.sd-image
         ];
       };
+      myISO = nixpkgs.lib.nixosSystem {
+        modules = [
+          "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-graphical-calamares-plasma6.nix"
+          ./hosts/iso/configuration.nix
+        ];
+      };
     };
     homeConfigurations = {
       # doesnt work because my different systems have different stateVersions
