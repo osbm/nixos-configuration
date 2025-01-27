@@ -24,7 +24,7 @@ in {
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.initrd.luks.devices."luks-b84e6223-825f-4944-a6fe-16368b75c6de".device = "/dev/disk/by-uuid/b84e6223-825f-4944-a6fe-16368b75c6de";
+  #boot.initrd.luks.devices."luks-b84e6223-825f-4944-a6fe-16368b75c6de".device = "/dev/disk/by-uuid/b84e6223-825f-4944-a6fe-16368b75c6de";
   networking.hostName = "ymir"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
