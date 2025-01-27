@@ -35,7 +35,7 @@ and voila! when you plug the sd card to the raspberry pi 5 it will boot up with 
 
 # To-do list
 
-- [ ] iso image generator for nixos
+- [x] iso image generator for nixos
     - Basically the original nixos iso with added packages and tweaks.
 - [ ] build custom android rom
     - Or how to run nixos on the phone.
