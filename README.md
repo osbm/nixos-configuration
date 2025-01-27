@@ -11,6 +11,9 @@ I didnt get these setup yet.
 - Raspberry Pi Zero 2W **harmonica** (small machine for small tasks and cronjobs) (not setup yet)
 - Android phone (termux) **android** (not setup yet)
 
+<details>
+  <summary> How to bootstrap raspberry pi 5</summary>
+
 ## How to use raspberry pi 5
 
 I have 2 configurations for the raspberry pi 5. One is for the sd card (basically bootstraps the system) and the other is for my customized system itself.
@@ -32,6 +35,7 @@ $ zstdcat nixos-sd-image-24.05.20241116.e8c38b7-aarch64-linux.img.zst | dd of=/d
 
 and voila! when you plug the sd card to the raspberry pi 5 it will boot up with the configuration that you have built. And then you can ssh into it and further configure it.
 
+</details>
 
 # To-do list
 
