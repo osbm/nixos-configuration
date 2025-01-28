@@ -16,7 +16,7 @@ in {
   nix.distributedBuilds = true;
   nix.buildMachines = [
     {
-      hostname = "ymir";
+      hostName = "ymir";
       systems = [ "x86_64-linux" "aarch64-linux" ];
       supportedFeatures = ["nixos-test" "benchmark" "big-parallel" "kvm"];
       sshKey = "/home/osbm/.ssh/id_ed25519";
