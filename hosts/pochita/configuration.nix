@@ -13,6 +13,17 @@ in {
     ../../modules
   ];
 
+  nix.distributedBuilds = true;
+  nix.buildMachines = [
+    {
+      hostname = "ymir";
+      systems = [ "x86_64-linux" "aarch64-linux" ];
+      supportedFeatures = ["nixos-test" "benchmark" "big-parallel" "kvm"];
+      sshKey = "/home/osbm/.ssh/id_ed25519";
+      sshUser = "osbm";
+    }
+  ];
+
   enableKDE = false;
   enableFonts = false;
 
