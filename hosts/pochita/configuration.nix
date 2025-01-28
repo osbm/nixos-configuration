@@ -18,7 +18,7 @@ in {
     {
       hostName = "ymir";
       systems = [ "x86_64-linux" "aarch64-linux" ];
-      supportedFeatures = ["nixos-test" "benchmark" "big-parallel" "kvm"];
+      supportedFeatures = [ "big-parallel" "kvm"];
       sshKey = "/home/osbm/.ssh/id_ed25519";
       sshUser = "osbm";
     }
