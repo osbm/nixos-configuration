@@ -47,6 +47,8 @@ in {
     #kernel-version = "v6_10_12";
   };
 
+  services.openssh.settings.GatewayPorts = "yes";
+
   system.nixos.label = system-label;
   # DO NOT TOUCH THIS
   system.stateVersion = stateVersion;
