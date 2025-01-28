@@ -21,6 +21,7 @@
     };
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-rpi.url = "github:NixOS/nixpkgs/eb62e6aa39ea67e0b8018ba8ea077efe65807dc8"; # TODO: fix this later
     nixvim = {
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -33,7 +34,7 @@
     };
     raspberry-pi-nix = {
       url = "github:nix-community/raspberry-pi-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-rpi";
     };
     vscode-server = {
       url = "github:nix-community/nixos-vscode-server";
@@ -50,6 +51,7 @@
     home-manager,
     raspberry-pi-nix,
     nixos-hardware,
+    nixpkgs-rpi,
     ...
   }: {
     nixosConfigurations = let
@@ -101,7 +103,7 @@
           }
         ];
       };
-      pochita = nixpkgs.lib.nixosSystem {
+      pochita = nixpkgs-rpi.lib.nixosSystem {
         modules = [
           ./hosts/pochita/configuration.nix
           raspberry-pi-nix.nixosModules.raspberry-pi
@@ -120,7 +122,7 @@
           inherit system-label;
         };
       };
-      pochita-sd = nixpkgs.lib.nixosSystem {
+      pochita-sd = nixpkgs-rpi.lib.nixosSystem {
         modules = [
           ./hosts/pochita-sd/configuration.nix
           raspberry-pi-nix.nixosModules.raspberry-pi
