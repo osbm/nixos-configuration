@@ -41,6 +41,8 @@ in {
   # Enable networking
   networking.networkmanager.enable = true;
 
+  networking.interfaces.enp3s0.wakeOnLan.enable = true;
+
   hardware.nvidia-container-toolkit.enable = true;
 
   # hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
