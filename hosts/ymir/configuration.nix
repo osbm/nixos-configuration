@@ -14,7 +14,7 @@ in {
     ../../modules
   ];
 
-  blockYoutube = true;
+  blockYoutube = false;
   blockTwitter = true;
   blockBluesky = false;
 
