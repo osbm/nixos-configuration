@@ -59,6 +59,9 @@ in {
 
   # hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
   # Enable OpenGL
+
+  programs.nix-required-mounts.presets.nvidia-gpu.enable = true;
+
   hardware.graphics = {
     enable = true;
   };
