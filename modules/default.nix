@@ -9,6 +9,7 @@
     ./i18n.nix
     ./nix-settings.nix
     ./secrets.nix
+    ./tailscale.nix
     ./users.nix
   ];
 }

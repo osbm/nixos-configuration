@@ -30,6 +30,8 @@ in {
   blockYoutube = false;
   blockTwitter = false;
 
+  enableTailscale = true;
+
   i18n.inputMethod.enable = lib.mkForce false; # no need for japanese input method
   programs.firefox.enable = lib.mkForce false; # no need for firefox
 
@@ -58,9 +60,6 @@ in {
     #kernel-version = "v6_10_12";
   };
 
-  networking.firewall.allowedTCPPorts = [ 22 ];
-
-  services.openssh.settings.GatewayPorts = "yes";
 
   system.nixos.label = system-label;
   # DO NOT TOUCH THIS
