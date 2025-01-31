@@ -78,6 +78,8 @@ in {
     */
     # Check about:config for options.
     preferences = {
+      # "Open previous windows and tabs"
+      "browser.startup.page" = 3;
       "browser.contentblocking.category" = true;
       "extensions.pocket.enabled" = false;
       "extensions.screenshots.disabled" = true;
