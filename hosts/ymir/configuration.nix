@@ -48,13 +48,13 @@ in {
   # see https://github.com/NixOS/nixpkgs/issues/91352
   systemd.services.wakeonlan = {
     description = "Reenable wake on lan every boot";
-    after = [ "network.target" ];
+    after = ["network.target"];
     serviceConfig = {
       Type = "simple";
       RemainAfterExit = "true";
       ExecStart = "${pkgs.ethtool}/sbin/ethtool -s enp3s0 wol g";
     };
-    wantedBy = [ "default.target" ];
+    wantedBy = ["default.target"];
   };
 
   hardware.nvidia-container-toolkit.enable = true;
@@ -64,7 +64,6 @@ in {
 
   programs.nix-required-mounts.enable = true;
   programs.nix-required-mounts.presets.nvidia-gpu.enable = true;
-
 
   hardware.graphics = {
     enable = true;
@@ -161,7 +160,6 @@ in {
 
   boot.binfmt.emulatedSystems = ["aarch64-linux"];
   nix.settings.extra-platforms = config.boot.binfmt.emulatedSystems;
-
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

@@ -17,8 +17,8 @@ in {
   nix.buildMachines = [
     {
       hostName = "192.168.0.2";
-      systems = [ "x86_64-linux" "aarch64-linux" ];
-      supportedFeatures = [ "big-parallel" "kvm"];
+      systems = ["x86_64-linux" "aarch64-linux"];
+      supportedFeatures = ["big-parallel" "kvm"];
       sshKey = "/home/osbm/.ssh/id_ed25519";
       sshUser = "osbm";
     }
@@ -59,7 +59,6 @@ in {
     board = "bcm2712";
     #kernel-version = "v6_10_12";
   };
-
 
   system.nixos.label = system-label;
   # DO NOT TOUCH THIS
