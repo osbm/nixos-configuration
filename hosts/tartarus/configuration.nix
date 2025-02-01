@@ -16,6 +16,7 @@ in {
 
   blockYoutube = false;
   blockTwitter = true;
+  blockBluesky = false;
 
   enableKDE = true;
 
