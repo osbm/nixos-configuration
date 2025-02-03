@@ -26,5 +26,10 @@
     comma
     just
     age
+    neovim
+    wget
   ];
+
+  services.openssh.enable = true;
+
 }
