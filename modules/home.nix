@@ -60,7 +60,18 @@
     baseIndex = 1;
     plugins = with pkgs; [
       tmuxPlugins.sensible
-      tmuxPlugins.dracula
+      # tmuxPlugins.dracula
+      {
+        plugin = pkgs.tmuxPlugins.dracula;
+        extraConfig = ''
+        set -g @dracula-plugins "cpu-usage ram-usage gpu-usage battery time"
+        set -g @dracula-show-left-icon hostname
+        set -g @dracula-git-show-current-symbol ✓
+        set -g @dracula-git-no-repo-message "no-git"
+        set -g @dracula-show-timezone false
+        set -g @dracula-ignore-lspci true
+        '';
+      }
     ];
   };
   # This value determines the Home Manager release that your
