@@ -58,6 +58,7 @@
     enable = true;
     historyLimit = 100000;
     baseIndex = 1;
+    shortcut = "s";
     plugins = with pkgs; [
       tmuxPlugins.sensible
       # tmuxPlugins.dracula
