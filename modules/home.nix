@@ -57,7 +57,10 @@
   programs.tmux = {
     enable = true;
     historyLimit = 100000;
+    baseIndex = 1;
     plugins = with pkgs; [
+      tmuxPlugins.sensible
+      tmuxPlugins.dracula
     ];
   };
   # This value determines the Home Manager release that your
