@@ -60,6 +60,7 @@
     baseIndex = 1;
     shortcut = "s";
     mouse = true;
+    shell = "${pkgs.fish}/bin/fish";
     plugins = with pkgs; [
       tmuxPlugins.sensible
       tmuxPlugins.better-mouse-mode
