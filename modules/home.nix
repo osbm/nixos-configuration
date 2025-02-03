@@ -59,8 +59,10 @@
     historyLimit = 100000;
     baseIndex = 1;
     shortcut = "s";
+    mouse = true;
     plugins = with pkgs; [
       tmuxPlugins.sensible
+      tmuxPlugins.better-mouse-mode
       # tmuxPlugins.dracula
       {
         plugin = pkgs.tmuxPlugins.dracula;
@@ -74,6 +76,10 @@
         '';
       }
     ];
+    extraConfig = ''
+      # Automatically renumber windows
+      set -g renumber-windows on
+    '';
   };
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
