@@ -1,11 +1,15 @@
 {
   config,
   pkgs,
+  inputs,
   ...
 }: {
   imports = [
     ./hardware-configuration.nix
     ../../modules
+    inputs.vscode-server.nixosModules.default
+    inputs.agenix.nixosModules.default
+    inputs.home-manager.nixosModules.home-manager
   ];
 
   myModules = {
@@ -51,6 +55,8 @@
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
 
   environment.systemPackages = with pkgs; [
+    inputs.agenix.packages.x86_64-linux.default
+    inputs.osbm-nvim.packages.x86_64-linux.default
   ];
 
   system.stateVersion = "24.05"; # lalalalala

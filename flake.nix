@@ -59,18 +59,7 @@
     nixosConfigurations = {
       tartarus = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        modules = [
-          ./hosts/tartarus/configuration.nix
-          vscode-server.nixosModules.default
-          agenix.nixosModules.default
-          home-manager.nixosModules.home-manager
-          {
-            environment.systemPackages = [
-              agenix.packages.x86_64-linux.default
-              osbm-nvim.packages.x86_64-linux.default
-            ];
-          }
-        ];
+        modules = [ ./hosts/tartarus/configuration.nix];
       };
       ymir = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
