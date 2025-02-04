@@ -6,7 +6,7 @@
 }:
 let
   wanikani-script = builtins.path {
-    path = ./wanikani.sh;
+    path = ./wanikani-tmux.sh;
   };
   tmux-dracula = pkgs.tmuxPlugins.mkTmuxPlugin rec {
     pluginName = "dracula";
