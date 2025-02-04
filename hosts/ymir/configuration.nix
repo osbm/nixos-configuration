@@ -16,9 +16,9 @@
   ];
 
   myModules = {
-    blockYoutube = false;
+    blockYoutube = true;
     blockTwitter = true;
-    blockBluesky = false;
+    blockBluesky = true;
     enableKDE = true;
     enableTailscale = true;
   };
