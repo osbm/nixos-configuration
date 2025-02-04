@@ -29,19 +29,13 @@ in {
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  #boot.initrd.luks.devices."luks-b84e6223-825f-4944-a6fe-16368b75c6de".device = "/dev/disk/by-uuid/b84e6223-825f-4944-a6fe-16368b75c6de";
   networking.hostName = "ymir"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
   home-manager.users.osbm = import ../../modules/home.nix {
     inherit config pkgs stateVersion;
   };
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -154,13 +148,6 @@ in {
     acceleration = "cuda";
   };
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
 
   boot.binfmt.emulatedSystems = ["aarch64-linux"];
   nix.settings.extra-platforms = config.boot.binfmt.emulatedSystems;
