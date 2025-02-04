@@ -53,10 +53,11 @@
     nixos-hardware,
     nixpkgs-rpi,
     ...
-  }: {
-    nixosConfigurations = let
-      system-label = self.shortRev or self.dirtyShortRev or self.lastModified or "unknown";
-    in {
+  }@ inputs:
+  let
+    inherit (self) outputs;
+  in{
+    nixosConfigurations = {
       tartarus = nixpkgs.lib.nixosSystem {
         modules = [
           ./hosts/tartarus/configuration.nix
@@ -70,9 +71,6 @@
             ];
           }
         ];
-        specialArgs = {
-          inherit system-label;
-        };
       };
       ymir = nixpkgs.lib.nixosSystem {
         modules = [
@@ -87,9 +85,6 @@
             ];
           }
         ];
-        specialArgs = {
-          inherit system-label;
-        };
       };
       harmonica = nixpkgs.lib.nixosSystem {
         modules = [
@@ -118,9 +113,6 @@
             ];
           }
         ];
-        specialArgs = {
-          inherit system-label;
-        };
       };
       pochita-sd = nixpkgs-rpi.lib.nixosSystem {
         modules = [

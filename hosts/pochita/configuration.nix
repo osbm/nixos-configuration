@@ -2,7 +2,6 @@
   config,
   pkgs,
   lib,
-  system-label,
   ...
 }: let
   stateVersion = "25.05";
@@ -59,7 +58,7 @@ in {
     #kernel-version = "v6_10_12";
   };
 
-  system.nixos.label = system-label;
+  # system.nixos.label = system-label;
   # DO NOT TOUCH THIS
   system.stateVersion = stateVersion;
 }

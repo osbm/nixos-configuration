@@ -4,7 +4,6 @@
 {
   config,
   pkgs,
-  system-label,
   ...
 }: let
   stateVersion = "24.05";
@@ -75,7 +74,7 @@ in {
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
-  system.nixos.label = system-label;
+  # system.nixos.label = system-label;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

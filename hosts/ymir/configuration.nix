@@ -4,7 +4,6 @@
 {
   config,
   pkgs,
-  system-label,
   ...
 }: let
   stateVersion = "25.05";
