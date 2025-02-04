@@ -3,9 +3,7 @@
   pkgs,
   lib,
   ...
-}: let
-  stateVersion = "25.05";
-in {
+}: {
   imports = [
     ./hardware-configuration.nix
     ../../modules
@@ -57,7 +55,5 @@ in {
     #kernel-version = "v6_10_12";
   };
 
-  # system.nixos.label = system-label;
-  # DO NOT TOUCH THIS
-  system.stateVersion = stateVersion;
+  system.stateVersion = "25.05";
 }
