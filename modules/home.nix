@@ -3,8 +3,7 @@
   pkgs,
   stateVersion,
   ...
-}:
-let
+}: let
   wanikani-script = builtins.path {
     path = ./wanikani-tmux.sh;
   };
@@ -26,12 +25,10 @@ let
       description = "Feature packed Dracula theme for tmux!";
       license = licenses.mit;
       platforms = platforms.unix;
-      maintainers = with maintainers; [ ethancedwards8 ];
+      maintainers = with maintainers; [ethancedwards8];
     };
   };
-
-in
-{
+in {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "osbm";
@@ -95,12 +92,12 @@ in
       {
         plugin = tmux-dracula;
         extraConfig = ''
-        set -g @dracula-plugins "custom:wanikani.sh cpu-usage ram-usage gpu-usage battery time"
-        set -g @dracula-show-left-icon hostname
-        set -g @dracula-git-show-current-symbol ✓
-        set -g @dracula-git-no-repo-message "no-git"
-        set -g @dracula-show-timezone false
-        set -g @dracula-ignore-lspci true
+          set -g @dracula-plugins "custom:wanikani.sh cpu-usage ram-usage gpu-usage battery time"
+          set -g @dracula-show-left-icon hostname
+          set -g @dracula-git-show-current-symbol ✓
+          set -g @dracula-git-no-repo-message "no-git"
+          set -g @dracula-show-timezone false
+          set -g @dracula-ignore-lspci true
         '';
       }
     ];

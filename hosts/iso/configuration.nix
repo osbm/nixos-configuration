@@ -31,5 +31,4 @@
   ];
 
   services.openssh.enable = true;
-
 }
