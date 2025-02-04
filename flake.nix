@@ -59,7 +59,7 @@
     nixosConfigurations = {
       tartarus = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        modules = [ ./hosts/tartarus/configuration.nix];
+        modules = [./hosts/tartarus/configuration.nix];
       };
       ymir = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
