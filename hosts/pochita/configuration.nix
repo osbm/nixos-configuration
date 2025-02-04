@@ -1,4 +1,3 @@
-# This is the SD image initial configuration
 {
   config,
   pkgs,
