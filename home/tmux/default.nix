@@ -36,23 +36,23 @@ in {
     mouse = true;
     shell = "${pkgs.fish}/bin/fish";
     plugins = with pkgs; [
-        tmuxPlugins.sensible
-        tmuxPlugins.better-mouse-mode
-        {
+      tmuxPlugins.sensible
+      tmuxPlugins.better-mouse-mode
+      {
         plugin = tmux-dracula;
         extraConfig = ''
-            set -g @dracula-plugins "custom:wanikani.sh cpu-usage ram-usage gpu-usage battery time"
-            set -g @dracula-show-left-icon hostname
-            set -g @dracula-git-show-current-symbol ✓
-            set -g @dracula-git-no-repo-message "no-git"
-            set -g @dracula-show-timezone false
-            set -g @dracula-ignore-lspci true
+          set -g @dracula-plugins "custom:wanikani.sh cpu-usage ram-usage gpu-usage battery time"
+          set -g @dracula-show-left-icon hostname
+          set -g @dracula-git-show-current-symbol ✓
+          set -g @dracula-git-no-repo-message "no-git"
+          set -g @dracula-show-timezone false
+          set -g @dracula-ignore-lspci true
         '';
-        }
+      }
     ];
     extraConfig = ''
-        # Automatically renumber windows
-        set -g renumber-windows on
+      # Automatically renumber windows
+      set -g renumber-windows on
     '';
   };
 }

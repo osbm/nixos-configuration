@@ -3,7 +3,6 @@
   pkgs,
   ...
 }: {
-
   imports = [
     ./tmux
     ./git.nix
