@@ -53,13 +53,12 @@
     nixos-hardware,
     nixpkgs-rpi,
     ...
-  }@ inputs:
-  let
+  } @ inputs: let
     inherit (self) outputs;
-  in{
+  in {
     nixosConfigurations = {
       tartarus = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs outputs; };
+        specialArgs = {inherit inputs outputs;};
         modules = [
           ./hosts/tartarus/configuration.nix
           vscode-server.nixosModules.default
@@ -74,7 +73,7 @@
         ];
       };
       ymir = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs outputs;};
+        specialArgs = {inherit inputs outputs;};
         modules = [
           ./hosts/ymir/configuration.nix
           vscode-server.nixosModules.default
@@ -101,7 +100,7 @@
         ];
       };
       pochita = nixpkgs-rpi.lib.nixosSystem {
-        specialArgs = { inherit inputs outputs; };
+        specialArgs = {inherit inputs outputs;};
         modules = [
           ./hosts/pochita/configuration.nix
           raspberry-pi-nix.nixosModules.raspberry-pi
