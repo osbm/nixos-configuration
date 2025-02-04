@@ -95,7 +95,7 @@ in
       {
         plugin = tmux-dracula;
         extraConfig = ''
-        set -g @dracula-plugins "custom:wanikani cpu-usage ram-usage gpu-usage battery time"
+        set -g @dracula-plugins "custom:wanikani.sh cpu-usage ram-usage gpu-usage battery time"
         set -g @dracula-show-left-icon hostname
         set -g @dracula-git-show-current-symbol ✓
         set -g @dracula-git-no-repo-message "no-git"
