@@ -2,9 +2,7 @@
   config,
   pkgs,
   ...
-}: let
-  stateVersion = "24.05";
-in {
+}: {
   imports = [
     ./hardware-configuration.nix
     ../../modules
@@ -55,5 +53,5 @@ in {
   environment.systemPackages = with pkgs; [
   ];
 
-  system.stateVersion = stateVersion; # Did you read the comment?
+  system.stateVersion = "24.05"; # lalalalala
 }
