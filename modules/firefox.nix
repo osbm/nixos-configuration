@@ -72,7 +72,12 @@ in {
       # run `jq .browser_specific_settings.gecko.id manifest.json` or
       # `jq .applications.gecko.id manifest.json` to get the UUID
     };
-
+    # userChrome = ''
+    #   #tabbrowser-tabs {
+    #     visibility: collapse;
+    #   }
+    # '';
+    # i am the only mf that doesnt use home-manager for firefox config
     /*
     ---- PREFERENCES ----
     */
