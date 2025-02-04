@@ -17,9 +17,9 @@ let
       rev = "v${version}";
       hash = "sha256-VY4PyaQRwTc6LWhPJg4inrQf5K8+bp0+eqRhR7+Iexk=";
     };
-    installPhase = ''
+    postInstall = ''
       # i am adding my custom widget to the plugin here cp the wanikani.sh script to the plugin directory
-      cp ${wanikani-script} $out/scripts/wanikani.sh
+      cp ${wanikani-script} $target/scripts/wanikani.sh
     '';
     meta = with pkgs.lib; {
       homepage = "https://draculatheme.com/tmux";
@@ -95,7 +95,7 @@ in
       {
         plugin = tmux-dracula;
         extraConfig = ''
-        set -g @dracula-plugins "cpu-usage ram-usage gpu-usage battery time"
+        set -g @dracula-plugins "custom:wanikani cpu-usage ram-usage gpu-usage battery time"
         set -g @dracula-show-left-icon hostname
         set -g @dracula-git-show-current-symbol ✓
         set -g @dracula-git-no-repo-message "no-git"
