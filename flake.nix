@@ -113,7 +113,10 @@
         ];
       };
       myISO = nixpkgs.lib.nixosSystem {
-        modules = [./hosts/iso/configuration.nix];
+        modules = [
+          ./hosts/iso/configuration.nix
+          "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-graphical-calamares-plasma6.nix"
+        ];
       };
     };
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
