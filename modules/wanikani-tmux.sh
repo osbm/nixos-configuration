@@ -18,7 +18,7 @@ main()
 {
     get_wanikani
     # sleep for 30 minutes
-    sleep 1800m
+    sleep 1800
 }
 
 main
