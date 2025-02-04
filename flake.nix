@@ -74,7 +74,7 @@
       };
       ymir = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        modules = [ ./hosts/ymir/configuration.nix ];
+        modules = [./hosts/ymir/configuration.nix];
       };
       harmonica = nixpkgs.lib.nixosSystem {
         modules = [
@@ -131,7 +131,5 @@
     };
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
     formatter.aarch64-linux = nixpkgs.legacyPackages.aarch64-linux.alejandra;
-
-    description = "My system configuration";
   };
 }

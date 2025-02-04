@@ -5,7 +5,7 @@
   ...
 }: {
   options = {
-    arduinoSetup = lib.mkOption {
+    myModules.arduinoSetup = lib.mkOption {
       type = lib.types.bool;
       default = false;
       description = "Installs arduino-ide and adafruit-nrfutil and sets udev rules";
@@ -13,7 +13,7 @@
   };
 
   config = lib.mkMerge [
-    (lib.mkIf config.arduinoSetup {
+    (lib.mkIf config.myModules.arduinoSetup {
       environment.systemPackages = with pkgs; [
         arduino-ide
         adafruit-nrfutil

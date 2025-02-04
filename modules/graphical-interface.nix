@@ -5,7 +5,7 @@
   ...
 }: {
   options = {
-    enableKDE = lib.mkOption {
+    myModules.enableKDE = lib.mkOption {
       type = lib.types.bool;
       default = false;
       description = "Enable KDE Plasma Desktop Environment with my favorite packages";
@@ -13,7 +13,7 @@
   };
 
   config = lib.mkMerge [
-    (lib.mkIf config.enableKDE {
+    (lib.mkIf config.myModules.enableKDE {
       # Enable the X11 windowing system.
       # You can disable this if you're only using the Wayland session.
       services.xserver.enable = true;

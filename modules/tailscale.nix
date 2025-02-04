@@ -5,7 +5,7 @@
   ...
 }: {
   options = {
-    enableTailscale = lib.mkOption {
+    myModules.enableTailscale = lib.mkOption {
       type = lib.types.bool;
       default = false;
       description = "Enable Tailscale VPN";
@@ -19,7 +19,7 @@
   # and i have a laptop named tartarus
 
   config = lib.mkMerge [
-    (lib.mkIf config.enableTailscale {
+    (lib.mkIf config.myModules.enableTailscale {
       services.tailscale = {
         enable = true;
         port = 51513;

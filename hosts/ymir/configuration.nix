@@ -17,13 +17,13 @@ in {
     inputs.home-manager.nixosModules.home-manager
   ];
 
-  blockYoutube = false;
-  blockTwitter = true;
-  blockBluesky = false;
-
-  enableKDE = true;
-
-  enableTailscale = true;
+  myModules = {
+    blockYoutube = false;
+    blockTwitter = true;
+    blockBluesky = false;
+    enableKDE = true;
+    enableTailscale = true;
+  };
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;

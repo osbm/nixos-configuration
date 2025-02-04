@@ -5,7 +5,7 @@
   ...
 }: {
   options = {
-    enableFonts = lib.mkOption {
+    myModules.enableFonts = lib.mkOption {
       type = lib.types.bool;
       default = true;
       description = "Enable my favorite fonts";
@@ -13,7 +13,7 @@
   };
 
   config = lib.mkMerge [
-    (lib.mkIf config.enableFonts {
+    (lib.mkIf config.myModules.enableFonts {
       fonts.packages = with pkgs; [
         noto-fonts
         noto-fonts-cjk-sans

@@ -13,13 +13,13 @@ in {
     ../../modules
   ];
 
-  blockYoutube = false;
-  blockTwitter = true;
-  blockBluesky = false;
-
-  enableKDE = true;
-
-  enableTailscale = true;
+  myModules = {
+    blockYoutube = false;
+    blockTwitter = true;
+    blockBluesky = false;
+    enableKDE = true;
+    enableTailscale = true;
+  };
 
   boot.binfmt.emulatedSystems = ["aarch64-linux"];
   nix.settings.extra-platforms = config.boot.binfmt.emulatedSystems;
