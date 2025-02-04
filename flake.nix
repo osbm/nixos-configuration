@@ -116,16 +116,6 @@
         modules = [./hosts/iso/configuration.nix];
       };
     };
-    homeConfigurations = {
-      # doesnt work because my different systems have different stateVersions
-      # I dont know how to get the stateVersion from the current host
-      osbm = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-        modules = [./modules/home.nix];
-        # get state version from the current hosts' configuration.nix
-        # specialArgs = { stateVersion = "24.05"; };
-      };
-    };
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
     formatter.aarch64-linux = nixpkgs.legacyPackages.aarch64-linux.alejandra;
   };
