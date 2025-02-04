@@ -4,6 +4,7 @@
 {
   config,
   pkgs,
+  inputs,
   ...
 }: let
   stateVersion = "25.05";
@@ -11,6 +12,9 @@ in {
   imports = [
     ./hardware-configuration.nix
     ../../modules
+    inputs.vscode-server.nixosModules.default
+    inputs.agenix.nixosModules.default
+    inputs.home-manager.nixosModules.home-manager
   ];
 
   blockYoutube = false;
@@ -140,8 +144,9 @@ in {
   };
 
   environment.systemPackages = with pkgs; [
-    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     nvidia-container-toolkit
+    inputs.agenix.packages.x86_64-linux.default
+    inputs.osbm-nvim.packages.x86_64-linux.default
   ];
 
   services.ollama = {
