@@ -21,8 +21,8 @@
 
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
-  home-manager.users.osbm = import ../../modules/home.nix {
-    inherit config pkgs stateVersion;
+  home-manager.users.osbm = import ../../home/home.nix {
+    inherit config pkgs;
   };
 
   virtualisation.virtualbox.host.enable = true;
