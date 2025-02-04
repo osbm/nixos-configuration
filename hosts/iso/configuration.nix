@@ -5,6 +5,10 @@
   system,
   ...
 }: {
+  imports = [
+    "${pkgs}/nixos/modules/installer/cd-dvd/installation-cd-graphical-calamares-plasma6.nix"
+  ];
+
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   nix.settings.experimental-features = [
     "nix-command"
