@@ -4,14 +4,11 @@
   lib,
   ...
 }: {
-
   options = {
-    myModules.enableJellyfin = {
-      enable = lib.mkOption {
-        type = lib.types.bool;
-        default = false;
-        description = "Enable Jellyfin media server";
-      };
+    myModules.enableJellyfin = lib.mkOption {
+      type = lib.types.bool;
+      default = false;
+      description = "Enable Jellyfin media server";
     };
   };
 
@@ -20,11 +17,9 @@
       services.jellyfin = {
         enable = true;
         openFirewall = true;
-
       };
 
       networking.firewall.allowedTCPPorts = [8096];
     })
   ];
-
 }
