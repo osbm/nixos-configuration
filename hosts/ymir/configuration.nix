@@ -21,7 +21,8 @@
     blockBluesky = true;
     enableKDE = true;
     enableTailscale = true;
-    enableJellyfin = true;
+    # jellyfin is unnecessary for now
+    enableJellyfin = false;
   };
 
   # Bootloader.
