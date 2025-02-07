@@ -25,7 +25,6 @@
 
   services.jellyfin = {
     enable = true;
-    port = 8096;
     openFirewall = true;
   };
 
