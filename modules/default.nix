@@ -7,6 +7,7 @@
     ./fonts.nix
     ./graphical-interface.nix
     ./i18n.nix
+    ./jellyfin.nix
     ./nix-settings.nix
     ./secrets.nix
     ./tailscale.nix

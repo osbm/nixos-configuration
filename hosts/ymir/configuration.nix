@@ -21,12 +21,9 @@
     blockBluesky = true;
     enableKDE = true;
     enableTailscale = true;
+    enableJellyfin = true;
   };
 
-  services.jellyfin = {
-    enable = true;
-    openFirewall = true;
-  };
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
