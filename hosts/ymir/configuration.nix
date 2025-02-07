@@ -22,7 +22,7 @@
     enableKDE = true;
     enableTailscale = true;
     # jellyfin is unnecessary for now
-    enableJellyfin = false;
+    enableJellyfin = true;
   };
 
   # Bootloader.
