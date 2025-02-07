@@ -25,10 +25,14 @@
     blockYoutube = false;
     blockTwitter = false;
     enableTailscale = true;
+    enableJellyfin = true;
   };
 
   i18n.inputMethod.enable = lib.mkForce false; # no need for japanese input method
   programs.firefox.enable = lib.mkForce false; # no need for firefox
+
+  # enable hyprland
+  programs.hyprland.enable = true;
 
   networking.hostName = "pochita";
   # log of shame: osbm blamed nix when he wrote "hostname" instead of "hostName"
