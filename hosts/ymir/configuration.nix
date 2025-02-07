@@ -23,6 +23,12 @@
     enableTailscale = true;
   };
 
+  services.jellyfin = {
+    enable = true;
+    port = 8096;
+    openFirewall = true;
+  };
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
