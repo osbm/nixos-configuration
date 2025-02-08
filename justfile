@@ -30,3 +30,6 @@ collect-garbage:
 
 build-sd-image-harmonica: check-git
   nix build -L .#nixosConfigurations.harmonica.config.system.build.sdImage
+
+build-iso: check-git
+  nix build -L .#nixosConfigurations.myISO.config.system.build.isoImage
