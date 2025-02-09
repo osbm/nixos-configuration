@@ -23,10 +23,10 @@
         defaultBranch = "main";
       };
       http = {
-        postBuffer = "1048576000";
+        postBuffer = 1048576000;
       };
       https = {
-        postBuffer = "1048576000";
+        postBuffer = 1048576000;
       };
       push = {
         autoSetupRemote = true;
