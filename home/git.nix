@@ -31,6 +31,6 @@
       push = {
         autoSetupRemote = true;
       };
-    }
+    };
   };
 }
