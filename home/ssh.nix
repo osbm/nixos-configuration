@@ -31,6 +31,21 @@
         user = "osbm";
         identityFile = "/home/osbm/.ssh/id_ed25519";
       };
+      "pochita-tailscale" = {
+        hostname = "pochita.curl-boga.ts.net";
+        user = "osbm";
+        identityFile = "/home/osbm/.ssh/id_ed25519";
+      };
+      "ymir-tailscale" = {
+        hostname = "ymir.curl-boga.ts.net";
+        user = "osbm";
+        identityFile = "/home/osbm/.ssh/id_ed25519";
+      };
+      "tartarus-tailscale" = {
+        hostname = "tartarus.curl-boga.ts.net";
+        user = "osbm";
+        identityFile = "/home/osbm/.ssh/id_ed25519";
+      };
     };
   };
 }
