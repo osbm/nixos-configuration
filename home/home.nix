@@ -7,6 +7,7 @@
     ./tmux
     ./git.nix
     ./ssh.nix
+    ./bash.nix
   ];
 
   home.username = "osbm";
