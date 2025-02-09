@@ -42,7 +42,6 @@
         obsidian
         mpv
         libreoffice
-        blender
         gimp
         kitty
         obs-studio
