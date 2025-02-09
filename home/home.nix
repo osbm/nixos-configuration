@@ -8,6 +8,7 @@
     ./git.nix
     ./ssh.nix
     ./bash.nix
+    ./tlrc.nix
   ];
 
   home.username = "osbm";
