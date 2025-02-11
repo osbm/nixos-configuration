@@ -21,6 +21,7 @@
     # jellyfin is unnecessary for now
     enableJellyfin = true;
     enableAarch64Emulation = true;
+    disableHibernation = true;
   };
 
   # Bootloader.
@@ -117,26 +118,6 @@
     #media-session.enable = true;
   };
 
-  systemd = {
-    targets = {
-      sleep = {
-        enable = false;
-        unitConfig.DefaultDependencies = "no";
-      };
-      suspend = {
-        enable = false;
-        unitConfig.DefaultDependencies = "no";
-      };
-      hibernate = {
-        enable = false;
-        unitConfig.DefaultDependencies = "no";
-      };
-      "hybrid-sleep" = {
-        enable = false;
-        unitConfig.DefaultDependencies = "no";
-      };
-    };
-  };
 
   environment.systemPackages = with pkgs; [
     nvidia-container-toolkit
