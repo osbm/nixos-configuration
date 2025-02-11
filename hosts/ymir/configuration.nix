@@ -22,6 +22,7 @@
     enableJellyfin = true;
     enableAarch64Emulation = true;
     disableHibernation = true;
+    enableWakeOnLan = true;
   };
 
   # Bootloader.
@@ -39,25 +40,9 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
-  networking.interfaces.enp3s0.wakeOnLan.enable = true;
-  # The services doesn't actually work atm, define an additional service
-  # see https://github.com/NixOS/nixpkgs/issues/91352
-  systemd.services.wakeonlan = {
-    description = "Reenable wake on lan every boot";
-    after = ["network.target"];
-    serviceConfig = {
-      Type = "simple";
-      RemainAfterExit = "true";
-      ExecStart = "${pkgs.ethtool}/sbin/ethtool -s enp3s0 wol g";
-    };
-    wantedBy = ["default.target"];
-  };
-
   hardware.nvidia-container-toolkit.enable = true;
 
-  # hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
   # Enable OpenGL
-
   programs.nix-required-mounts.enable = true;
   programs.nix-required-mounts.presets.nvidia-gpu.enable = true;
   # TODO: this ugly thing is necessary until this issue is resolved

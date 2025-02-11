@@ -14,5 +14,6 @@
     ./secrets.nix
     ./tailscale.nix
     ./users.nix
+    ./wake-on-lan.nix
   ];
 }
