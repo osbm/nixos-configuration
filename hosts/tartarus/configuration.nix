@@ -18,10 +18,9 @@
     blockBluesky = false;
     enableKDE = true;
     enableTailscale = true;
+    enableAarch64Emulation = true;
   };
 
-  boot.binfmt.emulatedSystems = ["aarch64-linux"];
-  nix.settings.extra-platforms = config.boot.binfmt.emulatedSystems;
 
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;

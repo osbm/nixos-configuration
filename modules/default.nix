@@ -3,6 +3,7 @@
     ./arduino.nix
     ./common-packages.nix
     ./concentration.nix
+    ./emulation.nix
     ./firefox.nix
     ./fonts.nix
     ./graphical-interface.nix

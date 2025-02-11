@@ -20,6 +20,7 @@
     enableTailscale = true;
     # jellyfin is unnecessary for now
     enableJellyfin = true;
+    enableAarch64Emulation = true;
   };
 
   # Bootloader.
@@ -147,9 +148,6 @@
     enable = true;
     acceleration = "cuda";
   };
-
-  boot.binfmt.emulatedSystems = ["aarch64-linux"];
-  nix.settings.extra-platforms = config.boot.binfmt.emulatedSystems;
 
   system.stateVersion = "25.05"; # great taboo of the nixos world
 }
