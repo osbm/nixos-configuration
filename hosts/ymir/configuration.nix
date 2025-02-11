@@ -118,7 +118,6 @@
     #media-session.enable = true;
   };
 
-
   environment.systemPackages = with pkgs; [
     nvidia-container-toolkit
     inputs.agenix.packages.x86_64-linux.default
