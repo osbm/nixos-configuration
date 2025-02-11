@@ -11,8 +11,11 @@ build *args: check-git
   nvd diff /run/current-system ./result
 
 [linux]
-switch *args: check-git
+switch *args: check-git check
   sudo nixos-rebuild switch --accept-flake-config --flake . {{args}} |& nom
+
+test:
+  nh os test .
 
 update:
   nix flake update
