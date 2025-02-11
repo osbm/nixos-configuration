@@ -9,6 +9,7 @@
     ./ssh.nix
     ./bash.nix
     ./tlrc.nix
+    ./firefox.nix
   ];
 
   home.username = "osbm";
