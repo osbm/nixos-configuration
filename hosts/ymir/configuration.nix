@@ -1,6 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
 {
   config,
   pkgs,
@@ -61,6 +58,9 @@
 
   programs.nix-required-mounts.enable = true;
   programs.nix-required-mounts.presets.nvidia-gpu.enable = true;
+  # TODO: this ugly thing is necessary until this issue is resolved
+  # https://github.com/NixOS/nixpkgs/issues/380601
+  nix.settings.system-features = ["nixos-test" "benchmark" "big-parallel" "kvm" "gpu" "nvidia-gpu" "opengl" "cuda"];
 
   hardware.graphics = {
     enable = true;
