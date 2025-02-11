@@ -1,7 +1,11 @@
-{ pkgs, config, ... }:
+{
+  pkgs,
+  config,
+  ...
+}:
 # stolen from https://github.com/dmarcoux/dotfiles
 {
-  home.packages = [ pkgs.tlrc ];
+  home.packages = [pkgs.tlrc];
   xdg.configFile."tlrc/config.toml".text = ''
     [cache]
     dir = "${config.xdg.cacheHome}/tlrc"
