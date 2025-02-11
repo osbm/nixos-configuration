@@ -19,6 +19,7 @@
     enableKDE = true;
     enableTailscale = true;
     enableAarch64Emulation = true;
+    enableSound = true;
   };
 
   home-manager.useGlobalPkgs = true;
@@ -38,16 +39,6 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-
-  # Enable sound with pipewire.
-  services.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
 
   hardware.bluetooth.enable = true; # enables support for Bluetooth
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot

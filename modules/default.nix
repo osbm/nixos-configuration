@@ -12,6 +12,7 @@
     ./jellyfin.nix
     ./nix-settings.nix
     ./secrets.nix
+    ./sound.nix
     ./tailscale.nix
     ./users.nix
     ./wake-on-lan.nix
