@@ -3,9 +3,9 @@
   pkgs,
   ...
 }: let
-  wanikani-current-reviews-script = builtins.path { path = ./scripts/wanikani-current-reviews.sh; };
-  wanikani-level-script = builtins.path { path = ./scripts/wanikani-level.sh; };
-  wanikani-progression-script = builtins.path { path = ./scripts/wanikani-progression.sh; };
+  wanikani-current-reviews-script = builtins.path { path = ./wanikani-current-reviews.sh; };
+  wanikani-level-script = builtins.path { path = ./wanikani-level.sh; };
+  wanikani-progression-script = builtins.path { path = ./wanikani-progression.sh; };
   tmux-dracula = pkgs.tmuxPlugins.mkTmuxPlugin rec {
     pluginName = "dracula";
     version = "3.0.0";
