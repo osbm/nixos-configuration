@@ -3,9 +3,9 @@
   pkgs,
   ...
 }: let
-  wanikani-script = builtins.path {
-    path = ./wanikani-tmux.sh;
-  };
+  wanikani-current-reviews-script = builtins.path { path = ./scripts/wanikani-current-reviews.sh; };
+  wanikani-level-script = builtins.path { path = ./scripts/wanikani-level.sh; };
+  wanikani-progression-script = builtins.path { path = ./scripts/wanikani-progression.sh; };
   tmux-dracula = pkgs.tmuxPlugins.mkTmuxPlugin rec {
     pluginName = "dracula";
     version = "3.0.0";
@@ -17,7 +17,9 @@
     };
     postInstall = ''
       # i am adding my custom widget to the plugin here cp the wanikani.sh script to the plugin directory
-      cp ${wanikani-script} $target/scripts/wanikani.sh
+      cp ${wanikani-current-reviews-script} $target/scripts/wanikani-current-reviews.sh
+      cp ${wanikani-level-script} $target/scripts/wanikani-level.sh
+      cp ${wanikani-progression-script} $target/scripts/wanikani-progression.sh
     '';
     meta = with pkgs.lib; {
       homepage = "https://draculatheme.com/tmux";
@@ -41,7 +43,7 @@ in {
       {
         plugin = tmux-dracula;
         extraConfig = ''
-          set -g @dracula-plugins "custom:wanikani.sh cpu-usage ram-usage gpu-usage battery time"
+          set -g @dracula-plugins "custom:wanikani-level.sh custom:wanikani-progression.sh custom:wanikani-current-reviews.sh cpu-usage ram-usage gpu-usage battery"
           set -g @dracula-show-left-icon hostname
           set -g @dracula-git-show-current-symbol ✓
           set -g @dracula-git-no-repo-message "no-git"
