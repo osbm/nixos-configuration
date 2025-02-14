@@ -12,8 +12,8 @@ build *args: check-git
 
 [linux]
 switch *args: check-git check
-  sudo nixos-rebuild switch --accept-flake-config --flake . {{args}} |& nom
-  # sudo nh os
+  # sudo nixos-rebuild switch --accept-flake-config --flake . {{args}} |& nom
+  nh os switch .
 
 test:
   nh os test .
