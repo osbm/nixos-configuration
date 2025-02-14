@@ -1,4 +1,5 @@
 {
+  inputs,
   pkgs,
   lib,
   config,
@@ -37,4 +38,7 @@
 
   # disable the database error TODO add nix-index search
   programs.command-not-found.enable = false;
+
+  system.configurationRevision = inputs.self.rev or "dirty"; 
+  #system.nixos.label = 
 }
