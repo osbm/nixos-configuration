@@ -1,17 +1,40 @@
 {
-  age.secrets = {
-    network-manager.file = ../secrets/network-manager.age;
-    ssh-key-private = {
-      file = ../secrets/ssh-key-private.age;
-      path = "/home/osbm/.ssh/id_ed25519";
-      owner = "osbm";
-      mode = "0600";
-    };
-    ssh-key-public = {
-      file = ../secrets/ssh-key-public.age;
-      path = "/home/osbm/.ssh/id_ed25519.pub";
-      owner = "osbm";
-      mode = "0644";
+  config,
+  pkgs,
+  inputs,
+  lib,
+  ...
+}: {
+  options = {
+    myModules.enableSecrets = lib.mkOption {
+      type = lib.types.bool;
+      default = true;
+      description = "Enable agenix secrets management";
     };
   };
+
+  config = lib.mkMerge [
+    (lib.mkIf config.myModules.enableSecrets {
+      environment.systemPackages = with pkgs; [
+        inputs.agenix.packages.x86_64-linux.default
+        age
+      ];
+
+      age.secrets = {
+        network-manager.file = ../secrets/network-manager.age;
+        ssh-key-private = {
+          file = ../secrets/ssh-key-private.age;
+          path = "/home/osbm/.ssh/id_ed25519";
+          owner = "osbm";
+          mode = "0600";
+        };
+        ssh-key-public = {
+          file = ../secrets/ssh-key-public.age;
+          path = "/home/osbm/.ssh/id_ed25519.pub";
+          owner = "osbm";
+          mode = "0644";
+        };
+      };
+    })
+  ];
 }

@@ -30,7 +30,6 @@
     lolcat
     cmatrix
     inxi
-    age
     jq
     onefetch
     just

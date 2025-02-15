@@ -44,7 +44,6 @@
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
 
   environment.systemPackages = with pkgs; [
-    inputs.agenix.packages.x86_64-linux.default
     inputs.osbm-nvim.packages.x86_64-linux.default
     nixd
   ];
