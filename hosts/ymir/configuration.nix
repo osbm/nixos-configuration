@@ -92,6 +92,7 @@
     nvidia-container-toolkit
     inputs.agenix.packages.x86_64-linux.default
     inputs.osbm-nvim.packages.x86_64-linux.default
+    nixd
   ];
 
   services.ollama = {

@@ -46,6 +46,7 @@
   environment.systemPackages = with pkgs; [
     inputs.agenix.packages.x86_64-linux.default
     inputs.osbm-nvim.packages.x86_64-linux.default
+    nixd
   ];
 
   system.stateVersion = "24.05"; # lalalalala
