@@ -3,6 +3,7 @@
     enable = true;
     userEmail = "osmanfbayram@gmail.com";
     userName = "osbm";
+    signing.format = "ssh";
     ignores = [
       "*.pyc" # python
       "*.swp" # vim
