@@ -15,9 +15,9 @@
 
   config = lib.mkMerge [
     (lib.mkIf config.myModules.enableSecrets {
-      environment.systemPackages = with pkgs; [
-        inputs.agenix.packages.x86_64-linux.default
-        age
+      environment.systemPackages = [
+        inputs.agenix.packages.${pkgs.hostPlatform.system}.agenix
+        pkgs.age
       ];
 
       age.secrets = {
