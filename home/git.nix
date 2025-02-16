@@ -20,6 +20,9 @@
         editor = "vim";
         pager = "cat";
       };
+      diff = {
+        wsErrorHighlight = "all";
+      };
       init = {
         defaultBranch = "main";
       };
