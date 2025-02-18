@@ -27,6 +27,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
+    nix-on-droid = {
+      url = "github:nix-community/nix-on-droid/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     osbm-nvim = {
       url = "github:osbm/osbm-nvim";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -52,6 +56,7 @@
     raspberry-pi-nix,
     nixos-hardware,
     nixpkgs-rpi,
+    nix-on-droid,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -108,6 +113,12 @@
         ];
       };
     };
+    nixOnDroidConfigurations.default = nix-on-droid.lib.nixOnDroidConfiguration {
+      specialArgs = {inherit inputs outputs;};
+      pkgs = import nixpkgs { system = "aarch64-linux"; };
+      modules = [./hosts/atreus/configuration.nix];
+    };
+
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
     formatter.aarch64-linux = nixpkgs.legacyPackages.aarch64-linux.alejandra;
   };
