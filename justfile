@@ -13,7 +13,7 @@ build *args: check-git
 [linux]
 switch *args: check-git
   #!/usr/bin/env sh
-  if [[ "$(hostname)" == "nix-on-droid" ]]; then
+  if [[ "$(hostname)" == "localhost" ]]; then
     nix-on-droid switch --flake .
   else
     nh os switch .
