@@ -372,15 +372,15 @@
         "nmd": "nmd"
       },
       "locked": {
-        "lastModified": 1725658585,
-        "narHash": "sha256-P29z4Gt89n5ps1U7+qmIrj0BuRXGZQSIaOe2+tsPgfw=",
-        "owner": "nix-community",
+        "lastModified": 1739907588,
+        "narHash": "sha256-1UjLSRRW+bkQafH5JEtMiBCld+ye0SEhIwuCv5Gx19k=",
+        "owner": "osbm",
         "repo": "nix-on-droid",
-        "rev": "5d88ff2519e4952f8d22472b52c531bb5f1635fc",
+        "rev": "d9a5f852ebceb55bc9b083cbc490e3ed525bea79",
         "type": "github"
       },
       "original": {
-        "owner": "nix-community",
+        "owner": "osbm",
         "ref": "master",
         "repo": "nix-on-droid",
         "type": "github"
@@ -483,11 +483,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1739751913,
-        "narHash": "sha256-H72wNdLOl9CzfimXjDdKWnV0Mr8lpVF4m3HZ2m+fuck=",
+        "lastModified": 1739902813,
+        "narHash": "sha256-BgOQcKKz7VNvSHIbBllHisv32HvF3W3ALF9sdnC++V8=",
         "owner": "nix-community",
         "repo": "nixvim",
-        "rev": "3a66c8a33001d8bd79388c6b15eb1039f43f4192",
+        "rev": "0ab9947137cd034ec64eb5cd9ede94e53af21f50",
         "type": "github"
       },
       "original": {
