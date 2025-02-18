@@ -38,6 +38,8 @@
     inherit config pkgs;
   };
 
+  services.waydroid.enable = true;
+
   # Enable networking
   networking.networkmanager.enable = true;
 
