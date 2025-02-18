@@ -1,10 +1,8 @@
 { config, lib, pkgs, ... }:
 
 {
-   user.userName = lib.mkForce "osbm";
-  # Simply install just the packages
+  #  user.userName = lib.mkForce "osbm"; # fuck i hate unmaintained projects
   environment.packages = with pkgs; [
-    # User-facing stuff that you really really want to have
     vim # or some other editor, e.g. nano or neovim
 
     # Some common stuff that people expect to have
@@ -13,7 +11,7 @@
     #diffutils
     findutils
     utillinux
-    #tzdata
+    tzdata
     hostname
     man
     gnugrep
