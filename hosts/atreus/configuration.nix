@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 
 {
-   user.userName = "osbm";
+   user.userName = lib.mkForce "osbm";
   # Simply install just the packages
   environment.packages = with pkgs; [
     # User-facing stuff that you really really want to have
