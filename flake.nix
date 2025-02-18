@@ -114,7 +114,7 @@
       };
     };
     nixOnDroidConfigurations.default = nix-on-droid.lib.nixOnDroidConfiguration {
-      specialArgs = {inherit inputs outputs;};
+      extraSpecialArgs = {inherit inputs outputs;};
       pkgs = import nixpkgs { system = "aarch64-linux"; };
       modules = [./hosts/atreus/configuration.nix];
     };
