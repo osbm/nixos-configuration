@@ -6,6 +6,8 @@ Here i have 4 machines and 1 sd card image that i maintain.
 - Desktop **ymir** (beast, my most prized possesion as of now)
 - Raspberry Pi 5 **pochita** (a server that i experiment with)
 - Raspberry Pi 5 SD image **pochita-sd** (produces an sd image that could be used to flash the sd card of a rpi-5)
+- Phone **atreus** (unrooted, nix-on-droid)
+
 
 I didnt get these setup yet.
 - Raspberry Pi Zero 2W **harmonica** (small machine for small tasks and cronjobs) (not setup yet)
