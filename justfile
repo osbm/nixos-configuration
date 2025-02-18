@@ -12,8 +12,12 @@ build *args: check-git
 
 [linux]
 switch *args: check-git
-  # sudo nixos-rebuild switch --accept-flake-config --flake . {{args}} |& nom
-  nh os switch .
+  if [[ "$(hostname)" == "nix-on-droid" ]]; then
+    nix-on-droid switch --flake .
+  else
+    nh os switch .
+  fi
+
 
 test:
   nh os test .
