@@ -38,7 +38,6 @@
     inherit config pkgs;
   };
 
-  virtualisation.waydroid.enable = true;
 
   # Enable networking
   networking.networkmanager.enable = true;
