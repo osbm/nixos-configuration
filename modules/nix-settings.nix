@@ -1,8 +1,6 @@
 {
   inputs,
-  pkgs,
   lib,
-  config,
   ...
 }: {
   # Allow unfree packages
@@ -21,6 +19,7 @@
       "cuda_cccl"
       "cuda_nvcc"
       "nvidia-settings"
+      "cuda-merged"
     ];
 
   # enable nix flakes
@@ -40,5 +39,4 @@
   programs.command-not-found.enable = false;
 
   system.configurationRevision = inputs.self.rev or "dirty";
-  #system.nixos.label =
 }
