@@ -60,7 +60,7 @@
   #time.timeZone = "Europe/Berlin";
 
   build.activation.sshd = ''
-    if [ ! -e /etc/ssh/ssh_host_rsa_key ]; then
+    if [ ! -e /etc/ssh/ssh_host_ed25519_key ]; then
       $VERBOSE_ECHO "Generating host keys..."
       $DRY_RUN_CMD ${pkgs.openssh}/bin/ssh-keygen -t ed25519 -a 32 -f "/etc/ssh/ssh_host_ed25519_key" -N ""
     fi
