@@ -10,6 +10,7 @@
     ./i18n.nix
     ./jellyfin.nix
     ./nix-settings.nix
+    ./remote-builds.nix
     ./secrets.nix
     ./sound.nix
     ./tailscale.nix

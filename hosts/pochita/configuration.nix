@@ -2,34 +2,28 @@
   config,
   pkgs,
   lib,
+  inputs,
   ...
 }: {
   imports = [
     ./hardware-configuration.nix
     ../../modules
+    inputs.raspberry-pi-nix.nixosModules.raspberry-pi
+    inputs.nixos-hardware.nixosModules.raspberry-pi-5
+    inputs.vscode-server.nixosModules.default
+    inputs.agenix.nixosModules.default
+    inputs.home-manager.nixosModules.home-manager
   ];
 
-  nix.distributedBuilds = true;
-  nix.buildMachines = [
-    {
-      hostName = "192.168.0.2";
-      systems = ["x86_64-linux" "aarch64-linux"];
-      supportedFeatures = ["big-parallel" "kvm"];
-      sshKey = "/home/osbm/.ssh/id_ed25519";
-      sshUser = "osbm";
-    }
-  ];
   myModules = {
     enableKDE = false;
     enableFonts = false;
     blockYoutube = false;
     blockTwitter = false;
     enableTailscale = true;
-    # enableJellyfin = true;
   };
 
   i18n.inputMethod.enable = lib.mkForce false; # no need for japanese input method
-  programs.firefox.enable = lib.mkForce false; # no need for firefox
 
   # enable hyprland
   # programs.hyprland.enable = true;

@@ -81,20 +81,7 @@
       };
       pochita = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        modules = [
-          ./hosts/pochita/configuration.nix
-          raspberry-pi-nix.nixosModules.raspberry-pi
-          nixos-hardware.nixosModules.raspberry-pi-5
-          vscode-server.nixosModules.default
-          agenix.nixosModules.default
-          home-manager.nixosModules.home-manager
-          {
-            environment.systemPackages = [
-              agenix.packages.aarch64-linux.default
-              osbm-nvim.packages.aarch64-linux.default
-            ];
-          }
-        ];
+        modules = [./hosts/pochita/configuration.nix];
       };
       pochita-sd = nixpkgs.lib.nixosSystem {
         modules = [
