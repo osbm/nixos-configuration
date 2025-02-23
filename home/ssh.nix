@@ -10,6 +10,17 @@ let
       "RequestTTY" = "force";
     };
   };
+  # sshBlockAtreus is the same as sshBlock but with 8090 as the port
+  sshBlockAtreus = hostname: {
+    hostname = hostname;
+    user = "osbm";
+    identityFile = "/home/osbm/.ssh/id_ed25519";
+    port = "8022";
+    extraOptions = {
+      "RemoteCommand" = "fish";
+      "RequestTTY" = "force";
+    };
+  };
 in
 {
   programs.ssh = {
@@ -19,8 +30,8 @@ in
     matchBlocks = {
       ymir = sshBlock "192.168.0.2";
       ymir-ts = sshBlock "ymir.curl-boga.ts.net";
-      atreus = sshBlock "192.168.0.3";
-      atreus-ts = sshBlock "atreus.curl-boga.ts.net";
+      atreus = sshBlockAtreus "192.168.0.3";
+      atreus-ts = sshBlockAtreus "atreus.curl-boga.ts.net";
       tartarus = sshBlock "192.168.0.4";
       tartarus-ts = sshBlock "tartarus.curl-boga.ts.net";
       pochita = sshBlock "192.168.0.9";
