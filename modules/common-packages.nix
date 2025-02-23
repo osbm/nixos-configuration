@@ -17,7 +17,10 @@
     htop
     unzip
     tlrc
-    wakeonlan
+    (pkgs.writeShellScriptBin "wake-ymir" ''
+      echo waking up ymir
+      ${pkgs.wakeonlan}/bin/wakeonlan 04:7c:16:e6:d9:13
+    '')
     btop
     pciutils
     nodePackages.npm

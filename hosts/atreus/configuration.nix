@@ -39,6 +39,10 @@
       echo "Starting sshd on port 8022"
       ${pkgs.openssh}/bin/sshd
     '')
+    (pkgs.writeShellScriptBin "wake-ymir" ''
+      echo waking up ymir
+      ${pkgs.wakeonlan}/bin/wakeonlan 04:7c:16:e6:d9:13
+    '')
   ];
 
   # Backup etc files instead of failing to activate generation if a file already exists in /etc
