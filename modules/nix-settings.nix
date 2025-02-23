@@ -25,6 +25,11 @@
   # enable nix flakes
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
+  nix.nixPath = [
+    "nixpkgs=${inputs.nixpkgs.path}"
+    "nixos-config=${inputs.self.path}"
+  ];
+
   nix.settings.trusted-users = ["root" "osbm"];
 
   nix.gc = {
