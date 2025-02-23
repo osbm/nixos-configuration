@@ -5,7 +5,6 @@
     ./concentration.nix
     ./disable-hibernation.nix
     ./emulation.nix
-    # ./firefox.nix
     ./fonts.nix
     ./graphical-interface.nix
     ./i18n.nix
