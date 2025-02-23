@@ -73,5 +73,9 @@
     PermitRootLogin no
     Port 8022
     PrintMotd no
+    AuthorizedKeysFile /etc/ssh/authorized_keys.d/%u
+  '';
+  environment.etc."ssh/authorized_keys.d/osbm".text = ''
+    ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPfnV+qqUCJf92npNW4Jy0hIiepCJFBDJHXBHnUlNX0k
   '';
 }
