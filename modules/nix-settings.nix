@@ -30,6 +30,8 @@
     "nixos-config=${inputs.self}"
   ];
 
+  nix.channel.enable = false;
+
   nix.settings.trusted-users = ["root" "osbm"];
 
   nix.gc = {
