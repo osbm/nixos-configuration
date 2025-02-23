@@ -12,7 +12,7 @@
       supportedFeatures = outputs.nixosConfigurations.ymir.config.nix.settings.system-features;
       sshKey = config.age.secrets.ssh-key-private.path;
       sshUser = "osbm";
-      protocol = "ssh-ng";
+      protocol = "ssh";
     }
   ];
 }
