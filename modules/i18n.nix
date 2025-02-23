@@ -14,6 +14,7 @@
     LC_PAPER = "tr_TR.UTF-8";
     LC_TELEPHONE = "tr_TR.UTF-8";
     LC_TIME = "ja_JP.UTF-8";
+    # LC_ALL = "en_US.UTF-8";
   };
 
   services.xserver.xkb = {
