@@ -26,8 +26,8 @@
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   nix.nixPath = [
-    "nixpkgs=${inputs.nixpkgs.path}"
-    "nixos-config=${inputs.self.path}"
+    "nixpkgs=${inputs.nixpkgs}"
+    "nixos-config=${inputs.self}"
   ];
 
   nix.settings.trusted-users = ["root" "osbm"];
