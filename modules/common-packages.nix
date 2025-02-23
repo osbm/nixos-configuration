@@ -1,7 +1,5 @@
 {
   pkgs,
-  lib,
-  config,
   ...
 }: {
   environment.systemPackages = with pkgs; [
@@ -27,11 +25,6 @@
     nodejs
     cloc
     neofetch
-    cbonsai
-    cowsay
-    fortune
-    lolcat
-    cmatrix
     inxi
     jq
     onefetch
@@ -39,7 +32,6 @@
     gh
     starship
     tree
-    ffmpeg
     nix-output-monitor
     yazi
     ripgrep
