@@ -1,5 +1,8 @@
-{config, outputs, ...}:{
-
+{
+  config,
+  outputs,
+  ...
+}: {
   nix.distributedBuilds = true;
   nix.settings.builders-use-substitutes = true;
   nix.buildMachines = [

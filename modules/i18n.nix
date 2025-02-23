@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   time.timeZone = "Europe/Istanbul";
 
   # Select internationalisation properties.
