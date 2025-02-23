@@ -1,7 +1,7 @@
 {config, outputs, ...}:{
 
   nix.distributedBuilds = true;
-  nix.builders-use-substitutes = true;
+  nix.settings.builders-use-substitutes = true;
   nix.buildMachines = [
     {
       hostName = "ymir.curl-boga.ts.net";
