@@ -43,6 +43,33 @@
       echo waking up ymir
       ${pkgs.wakeonlan}/bin/wakeonlan 04:7c:16:e6:d9:13
     '')
+    # obsidian tools
+    # i need a background process that can just keep pulling and pushing changes just like the obsidian git plugin
+    # (pkgs.writeShellScriptBin "rerouting-sync-start" ''
+    #   cd /storage/emulated/0/Documents/rerouting
+    #   git pull
+    #   git add --all
+    #   git commit -m "Android sync"
+    #   git push
+    # '')
+    (pkgs.writeShellScriptBin "cd-rerouting" ''
+      cd /storage/emulated/0/Documents/rerouting
+    '')
+    (pkgs.writeShellScriptBin "rerouting-status" ''
+      cd /storage/emulated/0/Documents/rerouting
+      git fetch
+      git status
+    '')
+    (pkgs.writeShellScriptBin "rerouting-pull" ''
+      cd /storage/emulated/0/Documents/rerouting
+      git pull
+    '')
+    (pkgs.writeShellScriptBin "rerouting-push" ''
+      cd /storage/emulated/0/Documents/rerouting
+      git add --all
+      git commit -m "Android sync"
+      git push
+    '')
   ];
 
   # Backup etc files instead of failing to activate generation if a file already exists in /etc

@@ -16,10 +16,7 @@ let
     user = "osbm";
     identityFile = "/home/osbm/.ssh/id_ed25519";
     port = 8022;
-    extraOptions = {
-      "RemoteCommand" = "fish";
-      "RequestTTY" = "force";
-    };
+    # fish not found error ???
   };
 in
 {
