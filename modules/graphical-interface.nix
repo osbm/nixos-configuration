@@ -50,6 +50,21 @@
         ani-cli
         prismlauncher
         qbittorrent
+        (pkgs.writeShellApplication {
+          name = "sync-terraria";
+          runtimeInputs = [
+            pkgs.python3Packages.huggingface-hub
+            pkgs.zip
+          ];
+          text = ''
+            cd ~/.local/share
+            timestamp=$(date +%Y-%m-%d_%H-%M)
+            echo "$timestamp"
+            zip -r "Terraria_$timestamp.zip" Terraria/
+            echo huggingface-cli whoami
+            huggingface-cli upload --repo-type dataset osbm/terraria-backups "Terraria_$timestamp.zip" "Terraria_$timestamp.zip"
+          '';
+        })
       ];
 
       programs.steam = {
