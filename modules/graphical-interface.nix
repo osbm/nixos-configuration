@@ -57,11 +57,17 @@
             pkgs.zip
           ];
           text = ''
+            # check if logged in to huggingface
+            # hugingface-cli whoami == "Not logged in" means not logged in
+            if [ "$(huggingface-cli whoami)" == "Not logged in" ]; then
+              echo "Please log in to huggingface"
+              exit 1
+            fi
+
             cd ~/.local/share
             timestamp=$(date +%Y-%m-%d_%H-%M)
             echo "$timestamp"
             zip -r "Terraria_$timestamp.zip" Terraria/
-            echo huggingface-cli whoami
             huggingface-cli upload --repo-type dataset osbm/terraria-backups "Terraria_$timestamp.zip" "Terraria_$timestamp.zip"
           '';
         })
