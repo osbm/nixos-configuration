@@ -46,12 +46,6 @@
   outputs = {
     self,
     nixpkgs,
-    vscode-server,
-    agenix,
-    osbm-nvim,
-    home-manager,
-    raspberry-pi-nix,
-    nixos-hardware,
     nix-on-droid,
     ...
   } @ inputs: let
@@ -68,20 +62,15 @@
       };
       harmonica = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        modules = [
-          ./hosts/harmonica/configuration.nix
-        ];
+        modules = [./hosts/harmonica/configuration.nix];
       };
       pochita = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [./hosts/pochita/configuration.nix];
       };
       pochita-sd = nixpkgs.lib.nixosSystem {
-        modules = [
-          ./hosts/pochita-sd/configuration.nix
-          raspberry-pi-nix.nixosModules.raspberry-pi
-          raspberry-pi-nix.nixosModules.sd-image
-        ];
+        specialArgs = {inherit inputs outputs;};
+        modules = [./hosts/pochita-sd/configuration.nix];
       };
       myISO = nixpkgs.lib.nixosSystem {
         modules = [

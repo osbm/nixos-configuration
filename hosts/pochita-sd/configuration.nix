@@ -1,8 +1,12 @@
 {
   pkgs,
-  lib,
+  inputs,
   ...
 }: {
+  imports = [
+    inputs.raspberry-pi-nix.nixosModules.raspberry-pi
+    inputs.raspberry-pi-nix.nixosModules.sd-image
+  ];
   # bcm2711 for rpi 3, 3+, 4, zero 2 w
   # bcm2712 for rpi 5
   # See the docs at:
