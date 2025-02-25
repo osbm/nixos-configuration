@@ -160,7 +160,7 @@
         };
         wifi-security = {
           key-mgmt = "wpa-psk";
-          psk = "$HOME_WIFI";
+          psk = "$MOBILE_HOTSPOT";
         };
       };
     };
