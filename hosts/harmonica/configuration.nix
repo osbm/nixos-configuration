@@ -1,13 +1,27 @@
 {
   config,
   lib,
-  modulesPath,
+  inputs,
   pkgs,
   ...
 }: {
   imports = [
     ./sd-image.nix
+    ../../modules
+    inputs.agenix.nixosModules.default
+    inputs.home-manager.nixosModules.home-manager
   ];
+
+  myModules = {
+    enableKDE = false;
+    enableFonts = false;
+    blockYoutube = false;
+    blockTwitter = false;
+    enableTailscale = true;
+  };
+
+  i18n.inputMethod.enable = lib.mkForce false; # no need for japanese input method
+
 
   # Some packages (ahci fail... this bypasses that) https://discourse.nixos.org/t/does-pkgs-linuxpackages-rpi3-build-all-required-kernel-modules/42509
   nixpkgs.overlays = [
@@ -19,7 +33,6 @@
 
   nixpkgs.hostPlatform = "aarch64-linux";
   # ! Need a trusted user for deploy-rs.
-  nix.settings.trusted-users = ["@wheel"];
   system.stateVersion = "25.05";
 
   zramSwap = {
@@ -149,26 +162,13 @@
     };
   };
 
-  # Enable OpenSSH out of the box.
-  services.sshd.enable = true;
-
   # NTP time sync.
   services.timesyncd.enable = true;
 
-  # ! Change the following configuration
-  users.users.osbm = {
-    isNormalUser = true;
-    home = "/home/osbm";
-    description = "osbm";
-    extraGroups = ["wheel" "networkmanager"];
-    # ! Be sure to put your own public key here
-    openssh.authorizedKeys.keys = ["a public key"];
-  };
 
   security.sudo = {
     enable = true;
     wheelNeedsPassword = false;
   };
-  # ! Be sure to change the autologinUser.
   services.getty.autologinUser = "osbm";
 }

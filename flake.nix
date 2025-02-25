@@ -69,7 +69,7 @@
       harmonica = nixpkgs.lib.nixosSystem {
         modules = [
           "${nixpkgs}/nixos/modules/installer/sd-card/sd-image-aarch64.nix"
-          agenix.nixosModules.default
+
           ./hosts/harmonica/configuration.nix
           {
             environment.systemPackages = [
