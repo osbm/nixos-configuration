@@ -103,6 +103,7 @@
   services.open-webui = {
       enable = true;
       port = 7070;
+      openFirewall = true;
       environment = {
         SCARF_NO_ANALYTICS = "True";
         DO_NOT_TRACK = "True";
