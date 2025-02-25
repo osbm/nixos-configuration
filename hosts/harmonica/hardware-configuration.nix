@@ -1,5 +1,8 @@
-{pkgs, lib, ...}: {
-
+{
+  pkgs,
+  lib,
+  ...
+}: {
   # Some packages (ahci fail... this bypasses that) https://discourse.nixos.org/t/does-pkgs-linuxpackages-rpi3-build-all-required-kernel-modules/42509
   nixpkgs.overlays = [
     (final: super: {
@@ -73,7 +76,6 @@
     # See: https://github.com/NixOS/nixpkgs/issues/254807
     swraid.enable = lib.mkForce false;
   };
-
 
   nixpkgs.hostPlatform = "aarch64-linux";
 }

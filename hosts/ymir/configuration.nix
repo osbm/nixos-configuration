@@ -101,19 +101,18 @@
   };
 
   services.open-webui = {
-      enable = true;
-      port = 7070;
-      host = "0.0.0.0";
-      openFirewall = true;
-      environment = {
-        SCARF_NO_ANALYTICS = "True";
-        DO_NOT_TRACK = "True";
-        ANONYMIZED_TELEMETRY = "False";
-        WEBUI_AUTH = "False";
-        ENABLE_LOGIN_FORM = "False";
-      };
+    enable = true;
+    port = 7070;
+    host = "0.0.0.0";
+    openFirewall = true;
+    environment = {
+      SCARF_NO_ANALYTICS = "True";
+      DO_NOT_TRACK = "True";
+      ANONYMIZED_TELEMETRY = "False";
+      WEBUI_AUTH = "False";
+      ENABLE_LOGIN_FORM = "False";
+    };
   };
-
 
   system.stateVersion = "25.05"; # great taboo of the nixos world
 }

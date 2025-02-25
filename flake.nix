@@ -69,7 +69,6 @@
       harmonica = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
-
           ./hosts/harmonica/configuration.nix
         ];
       };

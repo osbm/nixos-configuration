@@ -1,11 +1,11 @@
-{...}:
-let
+{...}: let
   # define a block that just takes a hostname and returns attrset to not repeat the same fields
   sshBlock = hostname: {
     hostname = hostname;
     user = "osbm";
     identityFile = "/home/osbm/.ssh/id_ed25519";
-    extraOptions = { # [ERROR] - (starship::print): Under a 'dumb' terminal (TERM=dumb).
+    extraOptions = {
+      # [ERROR] - (starship::print): Under a 'dumb' terminal (TERM=dumb).
       "RemoteCommand" = "fish";
       "RequestTTY" = "force";
     };
@@ -18,8 +18,7 @@ let
     port = 8022;
     # fish not found error ???
   };
-in
-{
+in {
   programs.ssh = {
     enable = true;
     hashKnownHosts = true;
