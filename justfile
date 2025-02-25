@@ -29,9 +29,6 @@ update:
 check:
   nix flake check
 
-clean:
-  rm result
-
 collect-garbage:
   sudo nix-env --profile /nix/var/nix/profiles/system --delete-generations old
   # home-manager expire-generations now
@@ -43,6 +40,9 @@ build-sd-image-harmonica: check-git
 build-iso: check-git
   nix build -L .#nixosConfigurations.myISO.config.system.build.isoImage
 
-flash-sd-image-harmonica: check-git
+flash-sd-image-harmonica:
+  # raise error because this command should be edited before running
+  false
   nix build -L .#nixosConfigurations.harmonica.config.system.build.sdImage
-  nix run nixos.sdImage -c writeImageTo /dev/mmcblk0 ./result
+  sudo dd if=result/sd-image/nixos-image-sd-card-25.05.20250224.0196c01-aarch64-linux.img of=/dev/sda bs=4M status=progress conv=fsync
+
