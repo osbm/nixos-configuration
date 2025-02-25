@@ -92,6 +92,9 @@
       grub.enable = false;
       generic-extlinux-compatible.enable = true;
     };
+    extraModprobeConfig = ''
+      options brcmfmac roamoff=1 feature_disable=0x82000
+    '';
 
     # Avoids warning: mdadm: Neither MAILADDR nor PROGRAM has been set. This will cause the `mdmon` service to crash.
     # See: https://github.com/NixOS/nixpkgs/issues/254807
