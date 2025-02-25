@@ -37,8 +37,7 @@
     inherit config pkgs;
   };
 
-  environment.systemPackages = with pkgs; [
-  ];
+  environment.systemPackages = [];
 
   security.sudo = {
     enable = true;
