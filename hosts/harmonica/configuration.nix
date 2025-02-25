@@ -111,6 +111,7 @@
   #     };
   #   };
   # };
+  networking.hostName = "harmonica";
   networking.networkmanager.ensureProfiles = {
     environmentFiles = [
       config.age.secrets.nm-secrets.path
