@@ -67,8 +67,9 @@
         modules = [./hosts/ymir/configuration.nix];
       };
       harmonica = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
         modules = [
-          "${nixpkgs}/nixos/modules/installer/sd-card/sd-image-aarch64.nix"
+
           ./hosts/harmonica/configuration.nix
         ];
       };
