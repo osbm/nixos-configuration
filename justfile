@@ -42,3 +42,7 @@ build-sd-image-harmonica: check-git
 
 build-iso: check-git
   nix build -L .#nixosConfigurations.myISO.config.system.build.isoImage
+
+flash-sd-image-harmonica: check-git
+  nix build -L .#nixosConfigurations.harmonica.config.system.build.sdImage
+  nix run nixos.sdImage -c writeImageTo /dev/mmcblk0 ./result
