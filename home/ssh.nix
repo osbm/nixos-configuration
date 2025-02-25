@@ -32,6 +32,8 @@ in {
       tartarus-ts = sshBlock "tartarus.curl-boga.ts.net";
       pochita = sshBlock "192.168.0.9";
       pochita-ts = sshBlock "pochita.curl-boga.ts.net";
+      harmonica = sshBlock "192.168.0.11";
+      harmonica-ts = sshBlock "harmonica.curl-boga.ts.net";
     };
   };
 }
