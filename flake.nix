@@ -96,14 +96,11 @@
 
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
     formatter.aarch64-linux = nixpkgs.legacyPackages.aarch64-linux.alejandra;
-    deploy = {
-      user = "root";
-      nodes = {
-        zero2w = {
-          hostname = "harmonica";
-          profiles.system.path =
-            deploy-rs.lib.aarch64-linux.activate.nixos self.nixosConfigurations.harmonica;
-        };
+    deploy.nodes.harmonica = {
+      hostname = "192.168.0.11";
+      profiles.system = {
+        user = "osbm";
+        path = deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.harmonica;
       };
     };
   };
