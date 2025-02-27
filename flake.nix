@@ -69,6 +69,10 @@
         specialArgs = {inherit inputs outputs;};
         modules = [./hosts/harmonica/configuration.nix];
       };
+      harmonica-sd = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [./hosts/harmonica-sd/configuration.nix];
+      };
       pochita = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [./hosts/pochita/configuration.nix];
