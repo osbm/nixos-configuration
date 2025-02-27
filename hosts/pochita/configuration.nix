@@ -25,9 +25,11 @@
 
   i18n.inputMethod.enable = lib.mkForce false; # no need for japanese input method
 
-  # enable hyprland
-  # programs.hyprland.enable = true;
-
+  # enable forgejo
+  services.forgejo = {
+    enable = true;
+    # port = 8080;
+  };
   networking.hostName = "pochita";
   # log of shame: osbm blamed nix when he wrote "hostname" instead of "hostName"
 
