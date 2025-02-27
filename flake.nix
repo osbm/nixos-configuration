@@ -102,7 +102,7 @@
         zero2w = {
           hostname = "harmonica";
           profiles.system.path =
-            deploy-rs.lib.aarch64-linux.activate.nixos self.nixosConfigurations.zero2w;
+            deploy-rs.lib.aarch64-linux.activate.nixos self.nixosConfigurations.harmonica;
         };
       };
     };
