@@ -24,6 +24,7 @@
     disableHibernation = true;
     enableWakeOnLan = true;
     enableSound = true;
+    enableADB = true;
   };
 
   # Bootloader.

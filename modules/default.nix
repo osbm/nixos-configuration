@@ -1,5 +1,6 @@
 {
   imports = [
+    ./adb.nix
     ./arduino.nix
     ./common-packages.nix
     ./concentration.nix
